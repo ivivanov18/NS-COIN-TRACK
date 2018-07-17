@@ -62,7 +62,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		m03bIgkFnBPOeM+dsmoS6qoMYGg=
+		0L8OdK/hSSXf9qXy2i1mOE4db78=
 		</data>
 		<key>Frameworks/NativeScript.framework/Info.plist</key>
 		<data>
@@ -75,6 +75,30 @@
 		<key>Frameworks/NativeScript.framework/_CodeSignature/CodeResources</key>
 		<data>
 		a/aXiOfK3DDpLAem7WBiKBWIjyQ=
+		</data>
+		<key>Frameworks/TNSCore.framework/Info.plist</key>
+		<data>
+		owowt3A6SItt8LdcdGouw5gg0LA=
+		</data>
+		<key>Frameworks/TNSCore.framework/TNSCore</key>
+		<data>
+		/XlHynOBKLKefTWTCUtTDebHMtc=
+		</data>
+		<key>Frameworks/TNSCore.framework/_CodeSignature/CodeResources</key>
+		<data>
+		CSmhZR9J7FeVACI64fj5Z+OxgRs=
+		</data>
+		<key>Frameworks/TNSListView.framework/Info.plist</key>
+		<data>
+		TgpuvAOMI6EFlIHgZBVfyi/oiGU=
+		</data>
+		<key>Frameworks/TNSListView.framework/TNSListView</key>
+		<data>
+		16PT+ihz8ygc6v34bVdQM1XYKfI=
+		</data>
+		<key>Frameworks/TNSListView.framework/_CodeSignature/CodeResources</key>
+		<data>
+		A3InqeLNZdiHNdtBKaAz2qkphk8=
 		</data>
 		<key>Frameworks/TNSWidgets.framework/Info.plist</key>
 		<data>
@@ -166,7 +190,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		945P7n/acrjX4iCWLnZptOfJGi8=
+		hkd2zfs/umq5xeYPLvoW2tYmsPA=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -174,7 +198,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		Die900ReiCWr9vPdzYIe964obmY=
+		1SNMccc4dCSkD9BiEgjLBkUKiCA=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -202,7 +226,7 @@
 		</data>
 		<key>app/main-page.xml</key>
 		<data>
-		2tt5QUc3voQpQIga1hqL7SAIAHc=
+		GIWYFRnYHZIDGJL8Ag7JCXRFRFQ=
 		</data>
 		<key>app/main-view-model.js</key>
 		<data>
@@ -607,6 +631,106 @@
 		<key>app/tns_modules/nativescript-theme-core/scss/utilities/_text.scss</key>
 		<data>
 		MV+ZX8kzvmw6pQYOINLgnG3jAZs=
+		</data>
+		<key>app/tns_modules/nativescript-ui-core/LICENSE.md</key>
+		<data>
+		IeREeXFEQJEDNXYabkFkMP41yDY=
+		</data>
+		<key>app/tns_modules/nativescript-ui-core/README.md</key>
+		<data>
+		JXCUskVoVOrHdebnmHRqtSV7w/g=
+		</data>
+		<key>app/tns_modules/nativescript-ui-core/android.d.ts</key>
+		<data>
+		1B30htM1iWUHRyKX2Az0W3tD5l8=
+		</data>
+		<key>app/tns_modules/nativescript-ui-core/index.d.ts</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>app/tns_modules/nativescript-ui-core/ios.d.ts</key>
+		<data>
+		ZKADoMXr1gdd3xZuz5wiiB6yq/Y=
+		</data>
+		<key>app/tns_modules/nativescript-ui-core/package.json</key>
+		<data>
+		kaSRytFJvgl7ulBQCo9t6bW6wE4=
+		</data>
+		<key>app/tns_modules/nativescript-ui-core/references.d.ts</key>
+		<data>
+		6/RnmKq9wFOOTrJBYIZbDcZpxOg=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/LICENSE.md</key>
+		<data>
+		IeREeXFEQJEDNXYabkFkMP41yDY=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/README.md</key>
+		<data>
+		WMN72foo9Bo889C31HAxvefZfjk=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/android.d.ts</key>
+		<data>
+		G6zXgTVo7LjIarlXE74gHw8XeG8=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/angular/listview-directives.d.ts</key>
+		<data>
+		+HTO8iuIigNMVuvhIH0Dgt9uotM=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/angular/listview-directives.js</key>
+		<data>
+		QGpaGsxbnUUbMOvu6ofBE1y8b/w=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/angular/listview-directives.metadata.json</key>
+		<data>
+		bx+7w/+UM9B2OHUi4MU1iDUsn0g=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/angular/package.json</key>
+		<data>
+		/a+jO0czeVHFgF//mAuI6somfM4=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/hooks/before-livesync/nativescript-angular-sync.js</key>
+		<data>
+		GrgIyuF5e4r+bh/HeLZLiTKRkv8=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/index.d.ts</key>
+		<data>
+		riv0kT/11pFOmkWzoINz8cRiSj8=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/ios.d.ts</key>
+		<data>
+		1HUXawJ5LTEK5jX+Ccca1Mc2IIA=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/package.json</key>
+		<data>
+		GwgHFftHRUTTaWhHeEF52Vha1UI=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/references.d.ts</key>
+		<data>
+		r90v6rHwyHKSPboKRx5KzfKZUH4=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.common.d.ts</key>
+		<data>
+		GmalSx4U8DZIhoEX5pbfQ01lYkE=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.common.js</key>
+		<data>
+		ExQHVCKUmaecszKHQCeobvQWkU4=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.common.metadata.json</key>
+		<data>
+		K2kjaCyZqA7FyjU4vIm5zQMUGN8=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.d.ts</key>
+		<data>
+		Z6JXjeUnjGTRL4mGzNJVRLjtxno=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.js</key>
+		<data>
+		AtmLopW1Tpf0gs51CBbwtDGEqrg=
+		</data>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.metadata.json</key>
+		<data>
+		dcoX8wda7SYAH+OJZdG3CrhxP/s=
 		</data>
 		<key>app/tns_modules/tns-core-modules-widgets/LICENSE</key>
 		<data>
@@ -1810,11 +1934,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			m03bIgkFnBPOeM+dsmoS6qoMYGg=
+			0L8OdK/hSSXf9qXy2i1mOE4db78=
 			</data>
 			<key>hash2</key>
 			<data>
-			Lb7mJ4wu4d3gjfu5REd5GyOvGJkh+vg9g9EnlIO3/mo=
+			5nrJO5TEzj30NIjBypbapUOkZ9RqN4xxbzkbEphDQpU=
 			</data>
 		</dict>
 		<key>Frameworks/NativeScript.framework/Info.plist</key>
@@ -1848,6 +1972,72 @@
 			<key>hash2</key>
 			<data>
 			14A5KQQtJQCVp+SIKa/EHYebCFkrCjL8S6mKj0FeHJY=
+			</data>
+		</dict>
+		<key>Frameworks/TNSCore.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			owowt3A6SItt8LdcdGouw5gg0LA=
+			</data>
+			<key>hash2</key>
+			<data>
+			CmXnBtpIfP4WTbNYOuW6cebr+IvJT7X67D46uwoBqqY=
+			</data>
+		</dict>
+		<key>Frameworks/TNSCore.framework/TNSCore</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/XlHynOBKLKefTWTCUtTDebHMtc=
+			</data>
+			<key>hash2</key>
+			<data>
+			McKhOTy1Nd8uI80zHigBrsoFqN1c2bAdwjXXo4OpUSc=
+			</data>
+		</dict>
+		<key>Frameworks/TNSCore.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CSmhZR9J7FeVACI64fj5Z+OxgRs=
+			</data>
+			<key>hash2</key>
+			<data>
+			r8+QaPxnyr+d7K8muyAnnEHRtB0gMGqlEgqOd308yFo=
+			</data>
+		</dict>
+		<key>Frameworks/TNSListView.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TgpuvAOMI6EFlIHgZBVfyi/oiGU=
+			</data>
+			<key>hash2</key>
+			<data>
+			e1N7tQu8c7qmRnAZNHq/tRypyIrlcw7AvK+5EJXTRao=
+			</data>
+		</dict>
+		<key>Frameworks/TNSListView.framework/TNSListView</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			16PT+ihz8ygc6v34bVdQM1XYKfI=
+			</data>
+			<key>hash2</key>
+			<data>
+			IRhPcGCyRqeisDiZtK9+iHXDWnpmtYISxVi8tFETc5c=
+			</data>
+		</dict>
+		<key>Frameworks/TNSListView.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			A3InqeLNZdiHNdtBKaAz2qkphk8=
+			</data>
+			<key>hash2</key>
+			<data>
+			zpyWDbBdci3XPuF5AeSWnJINF8v+0aNRC5+z8khCjks=
 			</data>
 		</dict>
 		<key>Frameworks/TNSWidgets.framework/Info.plist</key>
@@ -2085,11 +2275,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			945P7n/acrjX4iCWLnZptOfJGi8=
+			hkd2zfs/umq5xeYPLvoW2tYmsPA=
 			</data>
 			<key>hash2</key>
 			<data>
-			clbFT0vVQgtZrI2XcjyC8zIbRdNUeEzJDMoICHtnjI8=
+			B01XAFT4CoaQHqJwPhXwx3Cxz3GAFjgZK1AOkJhvONw=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -2107,11 +2297,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Die900ReiCWr9vPdzYIe964obmY=
+			1SNMccc4dCSkD9BiEgjLBkUKiCA=
 			</data>
 			<key>hash2</key>
 			<data>
-			rCN+HBQEi+c8JT1pc7peCpvWMcnHKwCZVRewTdqXyok=
+			q1t1NWuAmqOW+FUhYy5xs/WgV1LPZP2NZs7EHC+4JJo=
 			</data>
 		</dict>
 		<key>app/app-root.xml</key>
@@ -2173,11 +2363,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2tt5QUc3voQpQIga1hqL7SAIAHc=
+			GIWYFRnYHZIDGJL8Ag7JCXRFRFQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			2qkDRn99iZyOUvzkQwbbVR3/QtvR/cS5mQU7WrM0fz4=
+			WAnTcW1roPn2T7Eo0BW/tyNvgav4cpqwA0AU5E8tlxk=
 			</data>
 		</dict>
 		<key>app/main-view-model.js</key>
@@ -3289,6 +3479,281 @@
 			<key>hash2</key>
 			<data>
 			+yVjy4T6c/PeYoiHHyWW6o3Xv/zSCouyEDBLL/UM3hI=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-core/LICENSE.md</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IeREeXFEQJEDNXYabkFkMP41yDY=
+			</data>
+			<key>hash2</key>
+			<data>
+			32Q/Xu9ZptWCPXMR16rsBTQ8iUo6kMoNvrqb+c4yNzM=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-core/README.md</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JXCUskVoVOrHdebnmHRqtSV7w/g=
+			</data>
+			<key>hash2</key>
+			<data>
+			kRi0N+E4uN+Ro5+MYMb9/hgOA9hXkpr3pglKlWwNqTw=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-core/android.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1B30htM1iWUHRyKX2Az0W3tD5l8=
+			</data>
+			<key>hash2</key>
+			<data>
+			6NJX77OOoGB1XB5tq8Bh+OPSeGvHAyEiINRFfSRLpMw=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-core/index.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-core/ios.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZKADoMXr1gdd3xZuz5wiiB6yq/Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			pR1fk4HbVSuWfLaoiwcwHMnB59/e+H/Ys7zK1xPl+ng=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-core/package.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			kaSRytFJvgl7ulBQCo9t6bW6wE4=
+			</data>
+			<key>hash2</key>
+			<data>
+			+U9MX5JuKIs2gVQtHXgynfV9d7hl/VajeC+RAK9Cb+Y=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-core/references.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6/RnmKq9wFOOTrJBYIZbDcZpxOg=
+			</data>
+			<key>hash2</key>
+			<data>
+			R6yjXLgE8TKq1RNK6B0nNCP3j2sLnylTQVGp5v90m4M=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/LICENSE.md</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IeREeXFEQJEDNXYabkFkMP41yDY=
+			</data>
+			<key>hash2</key>
+			<data>
+			32Q/Xu9ZptWCPXMR16rsBTQ8iUo6kMoNvrqb+c4yNzM=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/README.md</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WMN72foo9Bo889C31HAxvefZfjk=
+			</data>
+			<key>hash2</key>
+			<data>
+			k2RJT1EY1cxwQyBKY65sACHJqNZaxU2x8rHMkSULQ/k=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/android.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			G6zXgTVo7LjIarlXE74gHw8XeG8=
+			</data>
+			<key>hash2</key>
+			<data>
+			knGsGoYq0wisRRiwNiRQRuS1ba0fKbzLzZ3aZ4gwA9U=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/angular/listview-directives.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+HTO8iuIigNMVuvhIH0Dgt9uotM=
+			</data>
+			<key>hash2</key>
+			<data>
+			XWyw7sZdY8Dn4NjgwnKhxFNzCoEPcHEUOPMLPe3aixs=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/angular/listview-directives.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QGpaGsxbnUUbMOvu6ofBE1y8b/w=
+			</data>
+			<key>hash2</key>
+			<data>
+			Jyugf4ZsB7g28FmQ63RsjaydCFtCkaduYKqWHrDou00=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/angular/listview-directives.metadata.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bx+7w/+UM9B2OHUi4MU1iDUsn0g=
+			</data>
+			<key>hash2</key>
+			<data>
+			evsho4MvfUeoY8aQ2v+SLqhueRlSZxQLpeewZiGpH9E=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/angular/package.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/a+jO0czeVHFgF//mAuI6somfM4=
+			</data>
+			<key>hash2</key>
+			<data>
+			SXHXqV29qyc9YVJrUh426ZALG0T2537dci11wZMnP0w=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/hooks/before-livesync/nativescript-angular-sync.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GrgIyuF5e4r+bh/HeLZLiTKRkv8=
+			</data>
+			<key>hash2</key>
+			<data>
+			VFkMpiAi5iWUeoGAwfWTwD6RtZMODtiIMznxAskfi54=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/index.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			riv0kT/11pFOmkWzoINz8cRiSj8=
+			</data>
+			<key>hash2</key>
+			<data>
+			ceGrtlY4pg1pUgHTG4zkW/5NQs+GAexSlIfiUxj5sRY=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/ios.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1HUXawJ5LTEK5jX+Ccca1Mc2IIA=
+			</data>
+			<key>hash2</key>
+			<data>
+			c1ML2k8t7XvTK/wrG/SXNESH8BuBcqIbjbe7pMDxrW4=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/package.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GwgHFftHRUTTaWhHeEF52Vha1UI=
+			</data>
+			<key>hash2</key>
+			<data>
+			nA9+x3/gr0jLRcFS1rB1STltUJRkFv8MyUbD4ODBAQg=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/references.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			r90v6rHwyHKSPboKRx5KzfKZUH4=
+			</data>
+			<key>hash2</key>
+			<data>
+			AGU1bVYheAuXCPuzGCI9d1hwQiweXkJ2Dx5po2Zasgg=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.common.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GmalSx4U8DZIhoEX5pbfQ01lYkE=
+			</data>
+			<key>hash2</key>
+			<data>
+			jNP+GayVDYk9kUmKPmWPA/+d1RrHhpl8ZxOl5c/V6tg=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.common.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ExQHVCKUmaecszKHQCeobvQWkU4=
+			</data>
+			<key>hash2</key>
+			<data>
+			HaJvnA+F2oYfb9ubZSER65M2j6IP+gwsvMVg1NMs0GQ=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.common.metadata.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K2kjaCyZqA7FyjU4vIm5zQMUGN8=
+			</data>
+			<key>hash2</key>
+			<data>
+			s/u+yqf/zcDAixZvjzx7fxWM95gkAaSVvMNPDi0Yk98=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Z6JXjeUnjGTRL4mGzNJVRLjtxno=
+			</data>
+			<key>hash2</key>
+			<data>
+			yr13MoyNtbsSjPrLxShYcGkV5z1v332A4nrSmNK83dI=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AtmLopW1Tpf0gs51CBbwtDGEqrg=
+			</data>
+			<key>hash2</key>
+			<data>
+			4PALlDlPCiSrYDICxGr7h2/nU63dar+cKWeJwIIvk4g=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-ui-listview/ui-listview.metadata.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dcoX8wda7SYAH+OJZdG3CrhxP/s=
+			</data>
+			<key>hash2</key>
+			<data>
+			Vgq8Bn6EXUtu8hz9D3aaF+7GvKsHQJrsE6IUI+mqAjs=
 			</data>
 		</dict>
 		<key>app/tns_modules/tns-core-modules-widgets/LICENSE</key>

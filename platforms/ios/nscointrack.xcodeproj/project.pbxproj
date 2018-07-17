@@ -14,6 +14,10 @@
 		C6F2D99C7E66457687EFF685 /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 08B38112250B45C1810DB7F4 /* build.xcconfig */; };
 		F401B05E4E634949A522EE5F /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D74563F3A5444EBBBE9A681 /* TNSWidgets.framework */; };
 		84FC8E8CF6F347C8A0E870EE /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D74563F3A5444EBBBE9A681 /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		00B0464802994276A3990F03 /* TNSListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9960C98D56464D0883487E05 /* TNSListView.framework */; };
+		BD5EDC14A8CD440AAD2F8DDC /* TNSListView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9960C98D56464D0883487E05 /* TNSListView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09693B763C8F4077922FE30A /* TNSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C334DC9B400D41428A8426F5 /* TNSCore.framework */; };
+		CDBF65AFD75C4CAF90930A79 /* TNSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C334DC9B400D41428A8426F5 /* TNSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +28,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				84FC8E8CF6F347C8A0E870EE /* TNSWidgets.framework in Embed Frameworks */,
+				BD5EDC14A8CD440AAD2F8DDC /* TNSListView.framework in Embed Frameworks */,
+				CDBF65AFD75C4CAF90930A79 /* TNSCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +51,8 @@
 		6447614BFD9D4E989916801D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = "nscointrack/Resources/LaunchScreen.storyboard"; sourceTree = "<group>"; fileEncoding = 4; };
 		08B38112250B45C1810DB7F4 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = build.xcconfig; path = "nscointrack/Resources/build.xcconfig"; sourceTree = "<group>"; fileEncoding = 4; };
 		1D74563F3A5444EBBBE9A681 /* TNSWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = "$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios/TNSWidgets.framework"; sourceTree = "<group>"; };
+		9960C98D56464D0883487E05 /* TNSListView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSListView.framework; path = "$(SRCROOT)/../../node_modules/nativescript-ui-listview/platforms/ios/TNSListView.framework"; sourceTree = "<group>"; };
+		C334DC9B400D41428A8426F5 /* TNSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSCore.framework; path = "$(SRCROOT)/../../node_modules/nativescript-ui-core/platforms/ios/TNSCore.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F401B05E4E634949A522EE5F /* TNSWidgets.framework in Frameworks */,
+				00B0464802994276A3990F03 /* TNSListView.framework in Frameworks */,
+				09693B763C8F4077922FE30A /* TNSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				1D74563F3A5444EBBBE9A681 /* TNSWidgets.framework */,
+				9960C98D56464D0883487E05 /* TNSListView.framework */,
+				C334DC9B400D41428A8426F5 /* TNSCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,6 +362,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/nativescript-ui-listview/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/nativescript-ui-core/platforms/ios\"",
 				);
 			};
 			name = Debug;
@@ -372,6 +386,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/nativescript-ui-listview/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/nativescript-ui-core/platforms/ios\"",
 				);
 			};
 			name = Release;
