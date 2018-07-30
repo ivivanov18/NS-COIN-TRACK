@@ -5,14 +5,14 @@
     </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabViewItem title="Coins">
-             <lv:RadListView id="listview" class="list-group"> 
+             <lv:RadListView items="{{coins}}" id="listview" class="list-group"> 
                 <lv:RadListView.listViewLayout>
                     <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="100" spanCount="2"/>                
                 </lv:RadListView.listViewLayout>
                 <lv:RadListView.itemTemplate>
                     <StackLayout class="list-group-item">
-                        <Label text="{{ itemName }}" class="list-group-item-heading" />
-                        <Label text="{{ itemDesc }}" textWrap="true" class="list-group-item-text" />
+                        <Label text="{{ coinSign }}" class="list-group-item-heading" />
+                        <Label text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
                     </StackLayout>
                 </lv:RadListView.itemTemplate>
             </lv:RadListView>

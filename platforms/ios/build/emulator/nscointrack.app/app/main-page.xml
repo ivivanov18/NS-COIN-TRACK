@@ -1,18 +1,21 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-ui-listview" navigatingTo="onNavigatingTo" class="page">
     <Page.actionBar>
         <ActionBar title="NS Coin Track" icon="" class="action-bar">
         </ActionBar>
     </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabViewItem title="Coins">
-            <StackLayout>
-                <Label text="NativeScript" class="m-15 h2 text-left" color="blue" />
-                <ScrollView>
-                    <StackLayout height="100%">
-                        <Label text="Ivan" textWrap="true" class="m-15" />
+             <lv:RadListView items="{{items}}" id="listview" class="list-group"> 
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="100" spanCount="2"/>                
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate>
+                    <StackLayout class="list-group-item">
+                        <Label text="{{ coinSign }}" class="list-group-item-heading" />
+                        <Label text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
                     </StackLayout>
-                </ScrollView>
-            </StackLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
         </TabViewItem>
         <TabViewItem title="Favorite Coins">
             <StackLayout>

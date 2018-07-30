@@ -1,19 +1,19 @@
 {
-	"time": "Tue Jul 17 2018 23:34:51 GMT+0300 (EEST)",
+	"time": "Tue Jul 24 2018 18:49:32 GMT+0300 (EEST)",
 	"nativePlatformStatus": "3",
 	"bundle": false,
 	"release": false,
 	"changesRequireBuild": false,
 	"projectFileHash": "e688439e6675c9bf9f6f11b667c3b178d8300039f0cb6c99cbb286f223a2171c",
-	"changesRequireBuildTime": "Tue Jul 17 2018 23:23:10 GMT+0300 (EEST)",
+	"changesRequireBuildTime": "Tue Jul 24 2018 18:44:58 GMT+0300 (EEST)",
 	"appFilesHashes": {
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/app-root.xml": "900a386cb2d8abc9573413eb3aff45448dcd3608",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/app.css": "6b35cf7fc669764bd611ef9fe3164457246cfaed",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/app.js": "ffc3603ba497e733dbb28ec3badadaa8df923f22",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/bundle-config.js": "d17c2570811747318a75d48cef336b3c2945cf07",
-		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-page.js": "e3dfd3fc75a4d41d3c3ea69bbfc2e52159919e19",
-		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-page.xml": "a451f7c121879b58f0a28ae08cce16a7ae86a5e1",
-		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-view-model.js": "f977a52b4fb31fe984415623f7597e914c24750d",
+		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-page.js": "77e994c430ca261afdc068e8005dd97fe486852d",
+		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-page.xml": "22beca2308a21deb9805c8cf5bb09f8dbae041f1",
+		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-view-model.js": "d7de2947c73b08c77edfc9815a0a69237c528c4c",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/package.json": "76d2f371ccaf38f64ed764513b2b13292c218382",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/references.d.ts": "c83a3304d98c2586359871f5d8ac10c8aa8af848"
 	}
