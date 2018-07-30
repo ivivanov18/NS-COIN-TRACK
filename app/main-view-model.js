@@ -1,8 +1,9 @@
 const ObservableArray = require("data/observable-array").ObservableArray;
-const Observable = require("data/observable");
+const Observable = require("data/observable").Observable;
 
 let items = new ObservableArray([]);
 let pageData = new Observable();
+const viewModel = new Observable();
 
 // function getMessage(counter) {
 //   if (counter <= 0) {

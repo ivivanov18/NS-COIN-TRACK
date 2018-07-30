@@ -46,6 +46,10 @@ function onNavigatingTo(args) {
   pageData.set("coins", cryptoCurrencies);
 }
 
+function addFavorite(args) {
+  console.log("TAPPED!");
+}
+
 /*
 Exporting a function in a NativeScript code-behind file makes it accessible
 to the file’s corresponding XML file. In this case, exporting the onNavigatingTo
@@ -53,3 +57,4 @@ function here makes the navigatingTo="onNavigatingTo" binding in this page’s X
 file work.
 */
 exports.onNavigatingTo = onNavigatingTo;
+exports.addFavorite = addFavorite;

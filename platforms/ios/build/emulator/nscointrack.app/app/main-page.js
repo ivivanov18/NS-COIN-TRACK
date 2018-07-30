@@ -12,16 +12,16 @@ JavaScript modules defined in other files.
 
 //const createViewModel = require("./main-view-model").createViewModel;
 const ObservableArray = require("data/observable-array").ObservableArray;
-const Observable = require("data/observable");
+const Observable = require("data/observable").Observable;
 
-const items = new ObservableArray([]);
+const cryptoCurrencies = new ObservableArray([]);
 const pageData = new Observable();
 
 function onNavigatingTo(args) {
   const page = args.object;
   page.bindingContext = pageData;
 
-  items.push(
+  cryptoCurrencies.push(
     {
       coinName: "Bitcoin",
       coinSign: "BTC",
@@ -43,7 +43,7 @@ function onNavigatingTo(args) {
       itemImage: ""
     }
   );
-  pageData.set("items", items);
+  pageData.set("coins", cryptoCurrencies);
 }
 
 /*
