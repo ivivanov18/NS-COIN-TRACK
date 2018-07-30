@@ -1,7 +1,0 @@
-{
-    "nativescript-theme-core": true,
-    "nativescript-ui-listview": true,
-    "tns-core-modules": true,
-    "nativescript-ui-core": true,
-    "tns-core-modules-widgets": true
-}
