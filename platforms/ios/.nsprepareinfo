@@ -1,5 +1,5 @@
 {
-	"time": "Tue Jul 31 2018 00:19:57 GMT+0300 (EEST)",
+	"time": "Tue Jul 31 2018 00:27:13 GMT+0300 (EEST)",
 	"nativePlatformStatus": "3",
 	"bundle": false,
 	"release": false,
@@ -12,7 +12,7 @@
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/app.js": "ffc3603ba497e733dbb28ec3badadaa8df923f22",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/bundle-config.js": "d17c2570811747318a75d48cef336b3c2945cf07",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-page.js": "64527bb0783b75819461aaede1f88e67503bacda",
-		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-page.xml": "99215ed44ba729b16b92b2f219b3baa64d11aed7",
+		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-page.xml": "83e3babe680999309010060fd7b2cde9b46dd413",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/main-view-model.js": "522d8546d10b50e4042305ad97127a8cd9d1c303",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/package.json": "76d2f371ccaf38f64ed764513b2b13292c218382",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/references.d.ts": "c83a3304d98c2586359871f5d8ac10c8aa8af848"

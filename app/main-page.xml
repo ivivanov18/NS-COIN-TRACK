@@ -7,7 +7,7 @@
         <TabViewItem title="Coins">
              <lv:RadListView items="{{coins}}" id="listview" class="list-group"> 
                 <lv:RadListView.listViewLayout>
-                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="200" spanCount="2"/>                
+                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="170" spanCount="2"/>                
                 </lv:RadListView.listViewLayout>
                 <lv:RadListView.itemTemplate>
                     <StackLayout class="list-group-item" tap="addFavorite">
