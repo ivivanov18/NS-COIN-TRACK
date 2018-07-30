@@ -62,7 +62,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		0L8OdK/hSSXf9qXy2i1mOE4db78=
+		4wAUcOA0aqICFToTnGige+k0Kbc=
 		</data>
 		<key>Frameworks/NativeScript.framework/Info.plist</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		hkd2zfs/umq5xeYPLvoW2tYmsPA=
+		wK/I5xBGKNwtEN2ulcd8XmngkJc=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		1SNMccc4dCSkD9BiEgjLBkUKiCA=
+		p2ZzZWcLdT8WGlTFaZ3f0+qRKfA=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1934,11 +1934,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0L8OdK/hSSXf9qXy2i1mOE4db78=
+			4wAUcOA0aqICFToTnGige+k0Kbc=
 			</data>
 			<key>hash2</key>
 			<data>
-			5nrJO5TEzj30NIjBypbapUOkZ9RqN4xxbzkbEphDQpU=
+			+w2PnP9pJ48wnxVeNsxLNoTvK1Jr+0qWAmtk07XLQAc=
 			</data>
 		</dict>
 		<key>Frameworks/NativeScript.framework/Info.plist</key>
@@ -2275,11 +2275,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hkd2zfs/umq5xeYPLvoW2tYmsPA=
+			wK/I5xBGKNwtEN2ulcd8XmngkJc=
 			</data>
 			<key>hash2</key>
 			<data>
-			B01XAFT4CoaQHqJwPhXwx3Cxz3GAFjgZK1AOkJhvONw=
+			fymFEZA2IbkysW+QNNU0gwSaTAgQOG4wHzmLGWl/9pw=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -2297,11 +2297,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1SNMccc4dCSkD9BiEgjLBkUKiCA=
+			p2ZzZWcLdT8WGlTFaZ3f0+qRKfA=
 			</data>
 			<key>hash2</key>
 			<data>
-			q1t1NWuAmqOW+FUhYy5xs/WgV1LPZP2NZs7EHC+4JJo=
+			MVO//zS/E+K1UnxfPN7GAm1oPh1L3DUz2f/npzremuU=
 			</data>
 		</dict>
 		<key>app/app-root.xml</key>

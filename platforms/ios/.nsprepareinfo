@@ -1,11 +1,11 @@
 {
-	"time": "Tue Jul 17 2018 23:23:10 GMT+0300 (EEST)",
+	"time": "Tue Jul 31 2018 00:38:22 GMT+0300 (EEST)",
 	"nativePlatformStatus": "3",
 	"bundle": false,
 	"release": false,
 	"changesRequireBuild": true,
 	"projectFileHash": "e688439e6675c9bf9f6f11b667c3b178d8300039f0cb6c99cbb286f223a2171c",
-	"changesRequireBuildTime": "Tue Jul 17 2018 23:23:10 GMT+0300 (EEST)",
+	"changesRequireBuildTime": "Tue Jul 31 2018 00:38:22 GMT+0300 (EEST)",
 	"appFilesHashes": {
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/app.js": "ffc3603ba497e733dbb28ec3badadaa8df923f22",
 		"/Users/ivan/Documents/apps/SoftUni/NativeScriptDevelopment/ns-coin-track/app/app-root.xml": "900a386cb2d8abc9573413eb3aff45448dcd3608",
