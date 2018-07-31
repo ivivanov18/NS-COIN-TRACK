@@ -47,7 +47,13 @@ function onNavigatingTo(args) {
 }
 
 function addFavorite(args) {
-  console.log("TAPPED!");
+  const coinSign = args.object.coin;
+  console.log("TAPPED!", coinSign);
+}
+
+function removeFromFavorite(args) {
+  const coinSign = args.object.coin;
+  console.log("TAPPED!", coinSign);
 }
 
 /*

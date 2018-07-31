@@ -10,18 +10,30 @@
                     <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="170" spanCount="2"/>                
                 </lv:RadListView.listViewLayout>
                 <lv:RadListView.itemTemplate>
-                    <StackLayout class="list-group-item" tap="addFavorite">
+                    <StackLayout class="list-group-item" >
+
                         <Label text="{{ coinSign }}" class="list-group-item-heading" />
                         <Label text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
+                        <Button text="Fav" coin="{{coinSign}}" tap="addFavorite" />
+                        <Image src="~/assets/images/lace-256px.png" stretch="none" height="64" width="64"/>
                     </StackLayout>
                 </lv:RadListView.itemTemplate>
             </lv:RadListView>
         </TabViewItem>
         <TabViewItem title="Favorite Coins">
-            <StackLayout>
-                <Image class="m-t-30 m-b-15" src="res://icon" width="80" height="80" />
-                <Label text="NativeScript" textWrap="true" class="h2 m-x-auto" color="blue" />
-            </StackLayout>
+            <lv:RadListView items="{{coins}}" id="listview" class="list-group"> 
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="170" spanCount="2"/>                
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate>
+                    <StackLayout class="list-group-item" >
+                        <Image src="~/assets/images/lace-512px.png" stretch="none" height="64" width="64"/>
+                        <Label text="{{ coinSign }}" class="list-group-item-heading" />
+                        <Label text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
+                        <Button text="Fav" coin="{{coinSign}}" tap="addFavorite" />
+                    </StackLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
         </TabViewItem>
     </TabView>
 </Page>
