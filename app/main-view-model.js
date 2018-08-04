@@ -1,54 +1,47 @@
 const ObservableArray = require("data/observable-array").ObservableArray;
 const Observable = require("data/observable").Observable;
 
-let items = new ObservableArray([]);
-let pageData = new Observable();
-const viewModel = new Observable();
-
-// function getMessage(counter) {
-//   if (counter <= 0) {
-//     return "Hoorraaay! You unlocked the NativeScript clicker achievement!";
-//   } else {
-//     return counter + " taps left";
-//   }
-// }
+const cryptoCurrencies = [];
 
 function createViewModel() {
-  items.push(
+  var viewModel = new Observable();
+  //var cryptoCurrencies = new ObservableArray([]);
+
+  cryptoCurrencies.push(
     {
       coinName: "Bitcoin",
       coinSign: "BTC",
-      itemImage: ""
+      itemImage: "",
+      isFavorite: false
     },
     {
       coinName: "Ethereum",
       coinSign: "ETH",
-      itemImage: ""
+      itemImage: "",
+      isFavorite: false
     },
     {
       coinName: "XRP",
       coinSign: "Ripple",
-      itemImage: ""
+      itemImage: "",
+      isFavorite: false
     },
     {
       coinName: "Litecoin",
       coinSign: "LTC",
-      itemImage: ""
+      itemImage: "",
+      isFavorite: false
     }
   );
 
-  //   var viewModel = new Observable();
-  //   viewModel.counter = 42;
-  //   viewModel.message = getMessage(viewModel.counter);
+  viewModel.coinsList = cryptoCurrencies;
 
-  //   viewModel.onTap = function() {
-  //     this.counter--;
-  //     this.set("message", getMessage(this.counter));
-  //   };
+  viewModel.onTapStar = function(args) {
+    const coinSign = args.object.coin;
+    console.log("TAPPED: ", coinSign);
+  };
 
-  //   return viewModel;
-  pageData.set("items", items);
-  return items;
+  return viewModel;
 }
 
 exports.createViewModel = createViewModel;

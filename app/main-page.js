@@ -1,60 +1,26 @@
-/*
-In NativeScript, a file with the same name as an XML file is known as
-a code-behind file. The code-behind is a great place to place your view
-logic, and to set up your page’s data binding.
-*/
-
-/*
-NativeScript adheres to the CommonJS specification for dealing with
-JavaScript modules. The CommonJS require() function is how you import
-JavaScript modules defined in other files.
-*/
-
-//const createViewModel = require("./main-view-model").createViewModel;
-const ObservableArray = require("data/observable-array").ObservableArray;
-const Observable = require("data/observable").Observable;
-
-const cryptoCurrencies = new ObservableArray([]);
-const pageData = new Observable();
+const createViewModel = require("./main-view-model").createViewModel;
 
 function onNavigatingTo(args) {
   const page = args.object;
-  page.bindingContext = pageData;
-
-  cryptoCurrencies.push(
-    {
-      coinName: "Bitcoin",
-      coinSign: "BTC",
-      itemImage: ""
-    },
-    {
-      coinName: "Ethereum",
-      coinSign: "ETH",
-      itemImage: ""
-    },
-    {
-      coinName: "XRP",
-      coinSign: "Ripple",
-      itemImage: ""
-    },
-    {
-      coinName: "Litecoin",
-      coinSign: "LTC",
-      itemImage: ""
-    }
-  );
-  pageData.set("coins", cryptoCurrencies);
+  page.bindingContext = createViewModel();
 }
 
-function addFavorite(args) {
-  const coinSign = args.object.coin;
-  console.log("TAPPED!", coinSign);
-}
+// function addFavorite(args) {
+//   const coinSign = args.object.coin;
 
-function removeFromFavorite(args) {
-  const coinSign = args.object.coin;
-  console.log("TAPPED!", coinSign);
-}
+//   isKeyInAppSettings = appSettings.hasKey(coinSign);
+//   console.log("TAPPED! Before adding: ", coinSign, " ", isKeyInAppSettings);
+//   appSettings.setString(coinSign, "true");
+//   isKeyInAppSettings = appSettings.hasKey(coinSign);
+//   setTimeout(function() {
+//     console.log("After adding: ", isKeyInAppSettings);
+//   }, 2000);
+// }
+
+// function removeFromFavorite(args) {
+//   const coinSign = args.object.coin;
+//   console.log("TAPPED!", coinSign);
+// }
 
 /*
 Exporting a function in a NativeScript code-behind file makes it accessible
@@ -63,4 +29,3 @@ function here makes the navigatingTo="onNavigatingTo" binding in this page’s X
 file work.
 */
 exports.onNavigatingTo = onNavigatingTo;
-exports.addFavorite = addFavorite;

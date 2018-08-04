@@ -5,23 +5,24 @@
     </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabViewItem title="Coins">
-             <lv:RadListView items="{{coins}}" id="listview" class="list-group"> 
+            <lv:RadListView items="{{coinsList}}" id="listview" class="list-group"> 
                 <lv:RadListView.listViewLayout>
-                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="170" spanCount="2"/>                
+                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="200" spanCount="2"/>                
                 </lv:RadListView.listViewLayout>
                 <lv:RadListView.itemTemplate>
-                    <StackLayout class="list-group-item" >
-
-                        <Label text="{{ coinSign }}" class="list-group-item-heading" />
-                        <Label text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
-                        <Button text="Fav" coin="{{coinSign}}" tap="addFavorite" />
-                        <Image src="~/assets/images/lace-256px.png" stretch="none" height="64" width="64"/>
-                    </StackLayout>
+                    <GridLayout rows="*,*,*,*,*" columns="*,*,*" style="padding-left: 20px;">
+                        <Label row="0" col="0" text="{{ coinSign }}" class="list-group-item-heading" />
+                        <Label row="1" col="0" colSpan="2" text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
+                        <Image row="0" col="3" src="~/assets/images/star-16px.png" stretch="aspect"  coin="{{coinSign}}" tap="{{onTapStar}}" 
+                        style="margin-top: 20px; padding-right:30px;" />
+                        <Image row="0" col="3" src="~/assets/images/lace-16px.png" stretch="aspect"  coin="{{coinSign}}" tap="{{onTapStar}}" style="margin-top: 20px; padding-right:30px;" />
+                    </GridLayout>
                 </lv:RadListView.itemTemplate>
             </lv:RadListView>
+
         </TabViewItem>
         <TabViewItem title="Favorite Coins">
-            <lv:RadListView items="{{coins}}" id="listview" class="list-group"> 
+            <lv:RadListView items="{{coinsList}}" id="listview" class="list-group"> 
                 <lv:RadListView.listViewLayout>
                     <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="170" spanCount="2"/>                
                 </lv:RadListView.listViewLayout>
@@ -30,7 +31,7 @@
                         <Image src="~/assets/images/lace-512px.png" stretch="none" height="64" width="64"/>
                         <Label text="{{ coinSign }}" class="list-group-item-heading" />
                         <Label text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
-                        <Button text="Fav" coin="{{coinSign}}" tap="addFavorite" />
+                        <Button text="Fav" coin="{{coinSign}}" tap="{{onTapStar}}" />
                     </StackLayout>
                 </lv:RadListView.itemTemplate>
             </lv:RadListView>
