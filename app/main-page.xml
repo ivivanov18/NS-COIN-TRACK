@@ -10,7 +10,7 @@
                     <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="200" spanCount="2"/>                
                 </lv:RadListView.listViewLayout>
                 <lv:RadListView.itemTemplate>
-                    <GridLayout rows="*,*,*,*,*" columns="*,*,*" style="padding-left: 20px;">
+                    <GridLayout rows="*,*,*,*,*" columns="*,*,*" width="170" height="180" style="padding-left: 20px;">
                         <Label row="0" col="0" text="{{ coinSign }}" class="list-group-item-heading" />
                         <Label row="1" col="0" colSpan="2" text="{{ coinName }}" textWrap="true" class="list-group-item-text" />
                         <Image row="0" col="3" src="~/assets/images/star-16px.png" stretch="aspect"  coin="{{coinSign}}" tap="{{onTapStar}}" 

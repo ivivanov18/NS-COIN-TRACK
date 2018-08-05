@@ -56,13 +56,25 @@ const createViewModel = () => {
   viewModel.onTapStar = function(args) {
     const coinSign = args.object.coin;
 
-    let indexOfElementToUpdate = findIndexOfElement(this.coinsList, coinSign);
+    let indOfElementToUpdateInList = findIndexOfElement(
+      this.coinsList,
+      coinSign
+    );
 
-    const modifiedItem = this.coinsList.getItem(indexOfElementToUpdate);
-    modifiedItem.isFavorite = !modifiedItem.isFavorite;
-    this.favoriteCoinsList.push(modifiedItem);
-    console.log("this.favoriteCoinsList: ", this.favoriteCoinsList);
-    this.coinsList.setItem(indexOfElementToUpdate, modifiedItem);
+    const modifiedItem = this.coinsList.getItem(indOfElementToUpdateInList);
+    if (modifiedItem.isFavorite) {
+      let indOfElementToUpdateInFavList = findIndexOfElement(
+        this.favoriteCoinsList,
+        coinSign
+      );
+      modifiedItem.isFavorite = false;
+      this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
+      this.favoriteCoinsList.splice(indOfElementToUpdateInFavList, 1);
+    } else {
+      modifiedItem.isFavorite = true;
+      this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
+      this.favoriteCoinsList.push(modifiedItem);
+    }
   };
 
   return viewModel;
