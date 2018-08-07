@@ -1,6 +1,12 @@
 const ObservableArray = require("data/observable-array").ObservableArray;
 const Observable = require("data/observable").Observable;
+const applicationSettings = require("application-settings");
 
+const KEY_FAVORITE_COINS = "Favorite_Coins";
+
+/**
+ * Used in development mode, to develop main functionalities before going and fetching data
+ */
 const cryptoCurrencies = new ObservableArray([
   {
     coinName: "Bitcoin",
@@ -15,8 +21,8 @@ const cryptoCurrencies = new ObservableArray([
     isFavorite: false
   },
   {
-    coinName: "XRP",
-    coinSign: "Ripple",
+    coinName: "Ripple",
+    coinSign: "XRP",
     itemImage: "",
     isFavorite: false
   },
@@ -28,10 +34,43 @@ const cryptoCurrencies = new ObservableArray([
   }
 ]);
 
-const findIndexOfElement = (array, coinSign) => {
+/**
+ * Used in development mode to generate the keys in applications settings
+ */
+const setApplicationSettings = () => {
+  applicationSettings.setString("BTC", "BTC");
+};
+
+/**
+ *
+ * @param {*} array
+ * @todo refactor variables names, eventually a second function
+ */
+const populateFavoriteList = array => {
+  const arrayFav = new ObservableArray([]);
+  const arrayWithModifiedFavoriteProperty = array.slice();
+
+  array.forEach((coin, index) => {
+    if (applicationSettings.hasKey(coin.coinSign)) {
+      arrayFav.push(coin);
+      const coinToModify = arrayWithModifiedFavoriteProperty.getItem(index);
+      coinToModify.isFavorite = true;
+      arrayWithModifiedFavoriteProperty.setItem(coinToModify);
+    }
+  });
+
+  return [arrayFav, arrayWithModifiedFavoriteProperty];
+};
+
+/**
+ *
+ * @param {ObservableArray} coinsArray
+ * @param {string} coinSign
+ */
+const findIndexOfElement = (coinsArray, coinSign) => {
   let indexOfElementToUpdate = -1;
 
-  array.forEach((element, index) => {
+  coinsArray.forEach((element, index) => {
     if (element.coinSign === coinSign) {
       indexOfElementToUpdate = index;
       return;
@@ -44,6 +83,8 @@ const findIndexOfElement = (array, coinSign) => {
 const getFavoriteCoins = array => {};
 
 const createViewModel = () => {
+  setApplicationSettings();
+
   var viewModel = new Observable();
 
   //viewModel.set("coinsList", cryptoCurrencies);
@@ -70,10 +111,16 @@ const createViewModel = () => {
       modifiedItem.isFavorite = false;
       this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
       this.favoriteCoinsList.splice(indOfElementToUpdateInFavList, 1);
+      applicationSettings.remove(coinSign);
+      console.log(applicationSettings.getString(coinSign));
     } else {
       modifiedItem.isFavorite = true;
       this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
       this.favoriteCoinsList.push(modifiedItem);
+
+      //Persist Application Settings
+      applicationSettings.setString(coinSign, coinSign);
+      console.log(applicationSettings.getString(coinSign));
     }
   };
 
