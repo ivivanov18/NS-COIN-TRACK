@@ -5,9 +5,26 @@
     </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabViewItem title="Coins">
-                <lv:RadListView items="{{coinsList}}" id="listview" class="list-group" style="background-color: lightgray;"> 
+            <!-- <ListView items="{{ coinsList }}" class="list-group">
+                <ListView.itemTemplate>
+                    <GridLayout rows="*,*,*,*,*" columns="*,*,*" width="180" height="190" style="margin-left: 10px; padding-left: 20px; border-width: 2px;">
+                        <Label row="0" col="0" text="{{ symbol }}" class="list-group-item-heading" />
+                        <Label row="1" col="0" colSpan="2" text="{{ name }}" textWrap="true" class="list-group-item-text" />
+                        <Image row="0" col="3" src="~/assets/images/star-16px.png" stretch="aspect"  coin="{{symbol}}" tap="{{onTapStar}}" 
+                        style="margin-top: 20px; padding-right:30px;"
+                        visibility="{{ !isFavorite ? 'visible' : 'collapsed' }}" />
+                        <Image row="0" col="3" src="~/assets/images/lace-16px.png" stretch="aspect"  coin="{{symbol}}" tap="{{onTapStar}}"
+                        visibility="{{ isFavorite ? 'visible' : 'collapsed' }}"
+                        style="margin-top: 20px; padding-right:30px;" />
+                        <Label row="2" col="0" colSpan="2" text="{{ quotes.USD.price }}" textWrap="true" class="list-group-item-text" />
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView> -->
+            <GridLayout rows="*,*" columns="*">
+                <SearchBar row="0" hint="Search for a cryptocurrency" clear="{{onClear}}" submit="{{onSubmit}}"/>
+                <lv:RadListView row="1" items="{{coinsList}}" id="listview" class="list-group" style="background-color: lightgray;"> 
                     <lv:RadListView.listViewLayout>
-                        <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="200" spanCount="2"/>                
+                        <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="200" spanCount="2"/>
                     </lv:RadListView.listViewLayout>
                     <lv:RadListView.itemTemplate>
                         <GridLayout rows="*,*,*,*,*" columns="*,*,*" width="180" height="190" style="margin-left: 10px; padding-left: 20px; border-width: 2px;">
@@ -23,28 +40,32 @@
                         </GridLayout>
                     </lv:RadListView.itemTemplate>
                 </lv:RadListView>
+            </GridLayout>
+
         </TabViewItem>
         <TabViewItem title="Favorite Coins">
-            <!-- <lv:RadListView items="{{favoriteCoinsList}}" id="favListview" class="list-group"> 
+            <lv:RadListView items="{{favoriteCoinsList}}" id="favListview" class="list-group"> 
                 <lv:RadListView.listViewLayout>
-                    <lv:ListViewGridLayout scrollDirection="Vertical" itemHeight="170" spanCount="2"/>                
+                    <lv:ListViewLinearLayout scrollDirection="Horizontal" itemHeight="400"/>  
                 </lv:RadListView.listViewLayout>
                 <lv:RadListView.itemTemplate>
-                    <StackLayout class="list-group-item" >
-                        <Image src="~/assets/images/lace-512px.png" stretch="none" height="64" width="64"/>
-                        <Label text="{{ symbol }}" class="list-group-item-heading" />
-                        <Label text="{{ name }}" textWrap="true" class="list-group-item-text" />
-                    </StackLayout>
+                    <GridLayout rows="*, * " columns="*">
+                        <Label row="0" text="{{ symbol }}" class="list-group-item-heading" />
+                        <Label row="1" text="{{ name }}" textWrap="true" class="list-group-item-text" />
+                    </GridLayout>
+                    <!-- <StackLayout class="list-group-item" >
+
+                    </StackLayout> -->
                 </lv:RadListView.itemTemplate>
-            </lv:RadListView> -->
-            <ListView row="0" items="{{ favoriteCoinsList }}" class="list-group">
+            </lv:RadListView>
+            <!-- <ListView orientation="Horizontal" row="0" items="{{ favoriteCoinsList }}" class="list-group">
                 <ListView.itemTemplate>
                     <StackLayout class="list-group-item">
                         <Label text="{{ symbol }}" class="list-group-item-heading" />
                         <Label text="{{ name }}" textWrap="true" class="list-group-item-text" />
                     </StackLayout>
                 </ListView.itemTemplate>
-            </ListView>
+            </ListView> -->
         </TabViewItem>
     </TabView>
 </Page>

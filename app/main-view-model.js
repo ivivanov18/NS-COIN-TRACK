@@ -93,7 +93,6 @@ const createViewModel = () => {
       this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
       this.favoriteCoinsList.splice(indOfElementToUpdateInFavList, 1);
       applicationSettings.remove(symbol);
-      console.log(applicationSettings.getString(symbol));
     } else {
       modifiedItem.isFavorite = true;
       this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
@@ -101,8 +100,48 @@ const createViewModel = () => {
 
       //Persist Application Settings
       applicationSettings.setString(symbol, symbol);
-      console.log(applicationSettings.getString(symbol));
     }
+  };
+
+  viewModel.onSubmit = function(args) {
+    const searchBar = args.object;
+    const searchValue = searchBar.text.toLowerCase();
+    if (searchValue !== "") {
+      const searchValueRegExp = new RegExp(searchValue);
+
+      this.coinsList.forEach(item => {
+        if (searchValueRegExp.test(item.name)) {
+          console.log(item);
+        }
+      });
+    }
+
+    // const myItems = new observableArrayModule.ObservableArray();
+    // if (searchValue !== "") {
+    //   for (let i = 0; i < arrayItems.length; i++) {
+    //     if (arrayItems[i].name.toLowerCase().indexOf(searchValue) !== -1) {
+    //       myItems.push(arrayItems[i]);
+    //     }
+    //   }
+    // }
+    // const page = searchBar.page;
+    // const vm = page.bindingContext;
+    // vm.set("myItems", myItems);
+  };
+
+  viewModel.onClear = function(args) {
+    const searchBar = args.object;
+    searchBar.text = "";
+    searchBar.hint = "Search for a cryptocurrency";
+
+    // const myItems = new observableArrayModule.ObservableArray();
+    // arrayItems.forEach(item => {
+    //   myItems.push(item);
+    // });
+
+    // const page = searchBar.page;
+    // const vm = page.bindingContext;
+    // vm.set("myItems", myItems);
   };
 
   return viewModel;
