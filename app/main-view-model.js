@@ -47,6 +47,7 @@ const findIndexOfElement = (coinsArray, symbol) => {
 const createViewModel = () => {
   let viewModel = new Observable();
   let coinsDataFromAPI = [];
+  let savedCoinsList = [];
 
   getDataFromAPI(apiURL).then(
     response => {
@@ -106,27 +107,24 @@ const createViewModel = () => {
   viewModel.onSubmit = function(args) {
     const searchBar = args.object;
     const searchValue = searchBar.text.toLowerCase();
+    let regExpMatchedElementsList = [];
+
     if (searchValue !== "") {
       const searchValueRegExp = new RegExp(searchValue);
 
       this.coinsList.forEach(item => {
-        if (searchValueRegExp.test(item.name)) {
-          console.log(item);
+        if (searchValueRegExp.test(item.name.toLowerCase())) {
+          regExpMatchedElementsList.push(item);
         }
       });
-    }
 
-    // const myItems = new observableArrayModule.ObservableArray();
-    // if (searchValue !== "") {
-    //   for (let i = 0; i < arrayItems.length; i++) {
-    //     if (arrayItems[i].name.toLowerCase().indexOf(searchValue) !== -1) {
-    //       myItems.push(arrayItems[i]);
-    //     }
-    //   }
-    // }
-    // const page = searchBar.page;
-    // const vm = page.bindingContext;
-    // vm.set("myItems", myItems);
+      savedCoinsList = viewModel.coinsList.slice();
+
+      viewModel.set(
+        "coinsList",
+        new ObservableArray(regExpMatchedElementsList)
+      );
+    }
   };
 
   viewModel.onClear = function(args) {
@@ -134,14 +132,7 @@ const createViewModel = () => {
     searchBar.text = "";
     searchBar.hint = "Search for a cryptocurrency";
 
-    // const myItems = new observableArrayModule.ObservableArray();
-    // arrayItems.forEach(item => {
-    //   myItems.push(item);
-    // });
-
-    // const page = searchBar.page;
-    // const vm = page.bindingContext;
-    // vm.set("myItems", myItems);
+    viewModel.set("coinsList", new ObservableArray(savedCoinsList));
   };
 
   return viewModel;
