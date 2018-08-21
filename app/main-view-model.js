@@ -3,10 +3,10 @@ const Observable = require("data/observable").Observable;
 const applicationSettings = require("application-settings");
 const httpModule = require("http");
 
-//
-const apiURL = require("./Utils/Constants").apiURL;
+const apiURL = require("./utils/Constants").apiURL;
 
 /**
+ * Function that fetch the data from the provided URL's API
  * @param {String} apiURL
  * @return {Promise}
  */
@@ -19,6 +19,8 @@ const getDataFromAPI = apiURL => {
  */
 const setApplicationSettings = () => {
   applicationSettings.setString("BTC", "BTC");
+  applicationSettings.setString("XRP", "XRP");
+  applicationSettings.setString("DOGE", "DOGE");
 };
 
 /**
@@ -46,12 +48,12 @@ const findIndexOfElement = (coinsArray, symbol) => {
  */
 const createViewModel = () => {
   let viewModel = new Observable();
-  let coinsDataFromAPI = [];
+  //let coinsDataFromAPI = [];
   let savedCoinsList = [];
 
   getDataFromAPI(apiURL).then(
     response => {
-      coinsDataFromAPI = Object.values(response.data);
+      const coinsDataFromAPI = Object.values(response.data);
 
       for (coin of coinsDataFromAPI) {
         if (applicationSettings.hasKey(coin.symbol)) {
@@ -61,6 +63,7 @@ const createViewModel = () => {
           coin.isFavorite = false;
         }
         viewModel.coinsList.push(coin);
+        savedCoinsList.push(coin);
       }
     },
     error => {
@@ -71,16 +74,17 @@ const createViewModel = () => {
   viewModel.coinsList = new ObservableArray();
   viewModel.favoriteCoinsList = new ObservableArray();
 
-  setApplicationSettings();
+  // setApplicationSettings();
 
   /**
-   * Function called when the user taps the star image. It adds coin list to favorite list and add
-   * in applications settings. If already favorite, then if tapped, takes out of favorite and deletes
-   * according key from
+   * Function called when the user taps the star image.
+   * It adds coin list to favorite list and add in applications settings.
+   * If already favorite, then if tapped, takes out of favorite and deletes according key from
    * @param {object} args
    */
-  viewModel.onTapStar = function(args) {
+  viewModel.onTapStar = args => {
     const symbol = args.object.coin;
+    console.log("SYMBOL TAPPED: ", symbol);
 
     let indOfElementToUpdateInList = findIndexOfElement(this.coinsList, symbol);
 
@@ -118,7 +122,7 @@ const createViewModel = () => {
         }
       });
 
-      savedCoinsList = viewModel.coinsList.slice();
+      //savedCoinsList = viewModel.coinsList.slice();
 
       viewModel.set(
         "coinsList",

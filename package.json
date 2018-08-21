@@ -1,26 +1,26 @@
 {
-	"description": "NativeScript Application",
-	"license": "SEE LICENSE IN <your-license-filename>",
-	"readme": "NativeScript Application",
-	"repository": "<fill-your-repository-here>",
-	"nativescript": {
-		"id": "org.nativescript.nscointrack",
-		"tns-android": {
-			"version": "4.1.3"
-		},
-		"tns-ios": {
-			"version": "4.1.1"
-		}
-	},
-	"dependencies": {
-		"nativescript-theme-core": "~1.0.4",
-		"nativescript-ui-listview": "^3.5.10",
-		"tns-core-modules": "~4.1.0"
-	},
-	"devDependencies": {
-		"babel-traverse": "6.26.0",
-		"babel-types": "6.26.0",
-		"babylon": "6.18.0",
-		"lazy": "1.0.11"
-	}
+  "description": "NativeScript Application to track the market's price evolution of cryptocurrencies on the coinmarket place.",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.nscointrack",
+    "tns-android": {
+      "version": "4.1.3"
+    },
+    "tns-ios": {
+      "version": "4.2.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-theme-core": "~1.0.4",
+    "nativescript-ui-listview": "^3.5.10",
+    "tns-core-modules": "~4.1.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11"
+  }
 }
