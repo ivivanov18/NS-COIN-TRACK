@@ -64,7 +64,7 @@
             </lv:RadListView> -->
             <ListView orientation="Horizontal" items="{{ favoriteCoinsList }}" class="list-group">
                 <ListView.itemTemplate>
-                    <GridLayout rows="*, *, " columns="*, * , *, *, *, *">
+                    <GridLayout rows="*, *, *, *, *, *, *, *, *, *, *, * , * , * " columns="*, * , *, *, *, *, *">
                         <Label row="0" text="{{ symbol }}" class="list-group-item-heading" />
                         <Label row="1" text="{{ name }}" textWrap="true" class="list-group-item-text" />
                     </GridLayout>
