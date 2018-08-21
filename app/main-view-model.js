@@ -2,6 +2,7 @@ const ObservableArray = require("data/observable-array").ObservableArray;
 const Observable = require("data/observable").Observable;
 const applicationSettings = require("application-settings");
 const httpModule = require("http");
+const appModule = require("application");
 
 const apiURL = require("./utils/Constants").apiURL;
 
@@ -42,6 +43,9 @@ const findIndexOfElement = (coinsArray, symbol) => {
   return indexOfElementToUpdate;
 };
 
+const floatPrecisionConverter = value => {
+  return parseFloat(value).toFixed(4);
+};
 /**
  *
  * @return {ViewModel}
@@ -82,9 +86,8 @@ const createViewModel = () => {
    * If already favorite, then if tapped, takes out of favorite and deletes according key from
    * @param {object} args
    */
-  viewModel.onTapStar = args => {
+  viewModel.onTapStar = function(args) {
     const symbol = args.object.coin;
-    console.log("SYMBOL TAPPED: ", symbol);
 
     let indOfElementToUpdateInList = findIndexOfElement(this.coinsList, symbol);
 
@@ -122,8 +125,6 @@ const createViewModel = () => {
         }
       });
 
-      //savedCoinsList = viewModel.coinsList.slice();
-
       viewModel.set(
         "coinsList",
         new ObservableArray(regExpMatchedElementsList)
@@ -138,6 +139,9 @@ const createViewModel = () => {
 
     viewModel.set("coinsList", new ObservableArray(savedCoinsList));
   };
+
+  //Setting float precision rounder
+  appModule.getResources().floatRounding = floatPrecisionConverter;
 
   return viewModel;
 };
