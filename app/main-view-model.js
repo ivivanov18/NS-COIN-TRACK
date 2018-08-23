@@ -5,7 +5,7 @@ const applicationSettings = require("application-settings");
 const appModule = require("application");
 
 //Project files
-const apiURL = require("./utils/Constants").apiURL;
+const apiURL = require("~/utils/Constants").apiURL;
 const {
   formatNumber,
   floatPrecisionConverter,
@@ -13,7 +13,7 @@ const {
   findIndexOfElement,
   getDataFromAPI,
   formatDate
-} = require("./utils/Helpers");
+} = require("~/utils/Helpers");
 
 /**
  * Main function that creates the model
