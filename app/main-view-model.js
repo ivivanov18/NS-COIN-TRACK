@@ -11,7 +11,8 @@ const {
   floatPrecisionConverter,
   getColor,
   findIndexOfElement,
-  getDataFromAPI
+  getDataFromAPI,
+  formatDate
 } = require("./utils/Helpers");
 
 /**
@@ -40,7 +41,6 @@ const createViewModel = () => {
       const coinsDataFromAPI = Object.values(response.data);
 
       for (coin of coinsDataFromAPI) {
-        coin.lastUpdated = Date.now();
         if (applicationSettings.hasKey(coin.symbol)) {
           coin.isFavorite = true;
           viewModel.favoriteCoinsList.push(coin);
@@ -133,6 +133,7 @@ const createViewModel = () => {
   appModule.getResources().floatRounding = floatPrecisionConverter;
   appModule.getResources().getTextColor = getColor;
   appModule.getResources().formatThousands = formatNumber;
+  appModule.getResources().formatDate = formatDate;
 
   return viewModel;
 };

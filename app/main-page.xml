@@ -24,7 +24,7 @@
                             visibility="{{ isFavorite ? 'visible' : 'collapsed' }}"
                             style="margin-top: 20px;" />
                             <Label row="3" col="0" colSpan="4" text="% change in 1 day" class="list-group-item-text" />
-                            <Label row="3" col="3" text="{{ quotes.USD.percent_change_24h | floatRounding(2) }}"  color="{{ quotes.USD.percent_change_24h | getTextColor() }}" textWrap="true" class="list-group-item-text" />
+                            <Label row="3" col="3" text="{{ quotes.USD.percent_change_24h | floatRounding(2) }}"  color="{{ quotes.USD.percent_change_24h | getTextColor() }}" style="font-weight: bold; font-size: 18; " textWrap="true" class="list-group-item-text" />
                         </GridLayout>
                     </lv:RadListView.itemTemplate>
                 </lv:RadListView>
@@ -64,6 +64,9 @@
                         <Label row="8" col="5" colSpan="4"  text="{{ total_supply | formatThousands()}}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />
                         <Label row="9" colSpan="5" col="0" text="max supply:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
                         <Label row="9" col="5" colSpan="4" text="{{ max_supply | formatThousands()  }}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />   
+                        <Label row="10" colSpan="5" col="0" text="last updated:" style="font-size: 14; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
+                        <Label row="10" col="5" colSpan="4" text="{{ last_updated | formatDate('YYYY-MM-DD HH:mm')  }}" style="font-size: 14; font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />  
+                        
                     </GridLayout>
                 </ListView.itemTemplate>
             </ListView>

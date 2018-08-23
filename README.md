@@ -18,7 +18,7 @@ An app to track the prices of the latest prices of cryptocurrencies. The applica
 
 ## ISSUES NOT SOLVED
 
-- CONSOLE ERROR file:///app/tns_modules/tns-core-modules/trace/trace.js:165:30: Binding: Property: 'onTapStar' is invalid or does not exist. SourceProperty: 'onTapStar': this creates some performance problems because this error is being constantly logged on the console.
+- `CONSOLE ERROR file:///app/tns_modules/tns-core-modules/trace/trace.js:165:30: Binding: Property: 'onTapStar' is invalid or does not exist. SourceProperty: 'onTapStar'`: this creates some performance problems because this error is being constantly logged on the console.
 - RadListView does not get updated on the Full Coin List tab:
   - iOS: when SearchBar is used to filter the results and when I click on one of the filtered results --> the element on which I clicked does not update the image to show it has become a favorite, YET the favorite coins list gets corrected updated. When I clear the searchbar and go back to the full list of coins, ONLY THEN the according item display the right image that shows the element is favorite.
   - Android: on the coins list, when I click on the star to make a coin favorite, the RadListView does not update to show the correct image (that the coin item has become a favorite). I need to scroll the list view downwards or upwards, and therefore make the element I clicked on disappear from the screen, in order the RadListView to update to the correct state (image showing the favorite picture). On the other side, the favorite list gets updated correctly to reflect the adding of the clicked coin to the favorite list.
@@ -45,14 +45,6 @@ However, a GridLayout works just fine.
 
 - Add functionality for app to update prices automatically every 5 minutes.
 - Add push notifications: for instance is price has changed more than 10 % in one hour to send a push to inform the user
-- Format the fields % change by using the following possibility of css
-
-```css
-label[text^="+"] {
-  color: green;
-}
-```
-
 - Add graphics for the trend of the price --> for this another API must be used
 - Add sorting capacities for Full Coin List to sort according to different options "price", "volume", '% change".
 
@@ -77,7 +69,3 @@ This part is to give credit for the FREE icons that are used in the applications
 ```
 <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 ```
-
-## Colors saved
-
-- #3D5AFE

@@ -3,6 +3,7 @@ const httpModule = require("http");
 
 //NPM libraries
 const format = require("format-number");
+const moment = require("moment");
 
 /**
  * Function that fetches the data from the provided URL's API.
@@ -65,6 +66,15 @@ const formatNumber = value => {
 };
 
 /**
+ * Function that formats a unix timestamp into a readable data
+ * ex: 1535017949 --> YYYY-MM-DD HH:mm
+ * @param {number} value
+ */
+const formatDate = (valueToFormat, accordingToformat) => {
+  return moment.unix(valueToFormat).format(accordingToformat);
+};
+
+/**
  * Used in development mode to generate the keys in applications settings for tests
  */
 const setApplicationSettings = () => {
@@ -79,3 +89,4 @@ exports.getColor = getColor;
 exports.findIndexOfElement = findIndexOfElement;
 exports.setApplicationSettings = setApplicationSettings;
 exports.getDataFromAPI = getDataFromAPI;
+exports.formatDate = formatDate;
