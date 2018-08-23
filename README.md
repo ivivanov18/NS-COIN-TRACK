@@ -34,18 +34,18 @@ The app was tested only simulators (no trials have been made on real machines) a
 #### iOS
 
 - Full Coins List
-  ![alt text](screenshots/iOS/iOS_Fulls_Coins_List.png "Full Coins List")
+  ![Screenshot](screenshots/iOS/iOS_Full_Coins_List.png "Full Coins List")
 
 - Favorite Coins List
-  ![alt text](screenshots/iOS/iOS_Favorite_Coins_List.png "Favorite Coins List")
+  ![Screenshot](screenshots/iOS/iOS_Favorite_Coins_List.png "Favorite Coins List")
 
 #### Android
 
 - Full Coins List
-  ![alt text](screenshots/Android/Android_Fulls_Coins_List.png "Full Coins List")
+  ![Screenshot](screenshots/Android/Android_Full_Coins_List.png "Full Coins List")
 
 - Favorite Coins List
-  ![alt text](screenshots/Android/Android_Favorite_Coins_List.png "Favorite Coins List")
+  ![Screenshot](screenshots/Android/Android_Favorite_Coins_List.png "Favorite Coins List")
 
 ## ISSUES NOT SOLVED
 
