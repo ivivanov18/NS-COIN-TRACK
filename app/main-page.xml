@@ -7,16 +7,19 @@
         <TabViewItem title="Full Coins List" iconSource= '~/assets/images/list20px.png'>    
             <GridLayout class="page" rows="auto,*" columns="*">
                 <SearchBar class="page" row="0" hint="Search for a cryptocurrency" clear="{{onClear}}" submit="{{onSubmit}}"/>
-                <lv:RadListView row="1" items="{{coinsList}}" id="listview" class="list-group"  itemLoading="onItemLoading"> 
+                <lv:RadListView row="1" items="{{coinsList}}" id="listview" class="list-group"  pullToRefresh="true" pullToRefreshInitiated="{{onPullToRefreshInitiated}}"> 
                     <lv:RadListView.listViewLayout>
                         <lv:ListViewLinearLayout scrollDirection="Vertical"/>
                     </lv:RadListView.listViewLayout>
+                    <lv:RadListView.pullToRefreshStyle>
+                        <lv:PullToRefreshStyle indicatorColor="#2B74F6" indicatorBackgroundColor="#303030"/>
+                    </lv:RadListView.pullToRefreshStyle>
                     <lv:RadListView.itemTemplate>
                         <GridLayout class="page" horizontalAlignment="stretch" rows="36,*,*,*" itemHeight="200px" columns="*,*,auto,*,22"  style="padding-left: 20px; border-bottom-width: 1px; color: #FFF;">
-                            <Label row="0" col="0" colSpan="4" text="{{ name }}" textWrap="true" class="list-group-item-text" style="font-size: 26; font-weight: bold"/>
+                            <Label row="0" col="0" colSpan="4" text="{{ name }}"  class="list-group-item-text" style="font-size: 26; font-weight: bold"/>
                             <Label row="1" col="0"  text="{{ symbol }}"   style=" font-size: 18;"    class="list-group-item-heading" />
-                            <Label row="1" rowSpan="2" col="2" text="$" style="font-weight: bold; font-size: 20;" textWrap="true" class="list-group-item-text" />
-                            <Label row="1" rowSpan="2" colSpan="2" col="3" text="{{ quotes.USD.price | floatRounding(4) }}" style="font-size: 22; font-weight: bold; color: #2B74F6" textWrap="true" class="list-group-item-text" />
+                            <Label row="1" rowSpan="2" col="2" text="$" style="font-weight: bold; font-size: 20;"  class="list-group-item-text" />
+                            <Label row="1" rowSpan="2" colSpan="2" col="3" text="{{ quotes.USD.price | floatRounding(4) }}" style="font-size: 22; font-weight: bold; color: #2B74F6"  class="list-group-item-text" />
                             <Image row="0" col="4" src="~/assets/images/star.png" stretch="aspect"  coin="{{symbol}}" tap="{{onTapStar}}" 
                             style="margin-top: 20px;"
                             visibility="{{ !isFavorite ? 'visible' : 'collapsed' }}" />
@@ -24,7 +27,7 @@
                             visibility="{{ isFavorite ? 'visible' : 'collapsed' }}"
                             style="margin-top: 20px;" />
                             <Label row="3" col="0" colSpan="4" text="% change in 1 day" class="list-group-item-text" />
-                            <Label row="3" col="3" text="{{ quotes.USD.percent_change_24h | floatRounding(2) }}"  color="{{ quotes.USD.percent_change_24h | getTextColor() }}" style="font-weight: bold; font-size: 18; " textWrap="true" class="list-group-item-text" />
+                            <Label row="3" col="3" text="{{ quotes.USD.percent_change_24h | floatRounding(2) }}"  color="{{ quotes.USD.percent_change_24h | getTextColor() }}" style="font-weight: bold; font-size: 18; "  class="list-group-item-text" />
                         </GridLayout>
                     </lv:RadListView.itemTemplate>
                 </lv:RadListView>
@@ -39,7 +42,7 @@
                 <lv:RadListView.itemTemplate>
                     <GridLayout horizontalAlignment="stretch" rows="*, * " columns="*">
                         <Label row="0" text="{{ symbol }}" class="list-group-item-heading" />
-                        <Label row="1" text="{{ name }}" textWrap="true" class="list-group-item-text" />
+                        <Label row="1" text="{{ name }}" class="list-group-item-text" />
                     </GridLayout>
                 </lv:RadListView.itemTemplate>
             </lv:RadListView> -->
@@ -47,25 +50,25 @@
                 <ListView.itemTemplate marginBottom="100px">
                     <GridLayout class="page" rows="*, *, *, *, *, *, *, *, *, *, *, * , * , * " columns="*, * , *, *, *, *, *,*,*,*" style="border-bottom-width: 1px; border-color: white;">
                         <Label row="0" col="4" colSpan="4" text="{{ symbol }}" style="font-size: 26; color: white; font-weight: bold;" class="list-group-item-heading" />
-                        <Label row="1" col="4" colSpan="4" text="{{ name }}" style="font-size: 20; color: white; margin-bottom: 20px;"  textWrap="true" class="list-group-item-text" />
-                        <Label row="2"  rowSpan="2" col="0" text="$" style="font-weight: bold; font-size: 20; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="2" rowSpan="2" colSpan="4" col="1" text="{{ quotes.USD.price | floatRounding(4) }}" style="font-size: 22; font-weight: bold; color: #2B74F6; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="2"  rowSpan="2" col="5" text="€" style="font-weight: bold; font-size: 20; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="2" rowSpan="2" colSpan="4" col="6" text="{{ quotes.EUR.price | floatRounding(4) }}" style="font-size: 22; font-weight: bold; color: #2B74F6; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="4" colSpan="4" col="0" text="1 hour % change:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="4" col="5" colSpan="2" text="{{ quotes.USD.percent_change_1h  | floatRounding(2) }}" color="{{ quotes.USD.percent_change_1h | getTextColor() }}" textWrap="true" class="list-group-item-text" style="font-weight: bold; margin-bottom: 20px;" />
-                        <Label row="5" colSpan="4" col="0" text="1 day % change:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="5" col="5" colSpan="2" text="{{ quotes.USD.percent_change_24h | floatRounding(2)  }}" color="{{ quotes.USD.percent_change_24h | getTextColor() }}" textWrap="true" class="list-group-item-text"  style="font-weight: bold; margin-bottom: 20px;"/>
-                        <Label row="6" colSpan="4" col="0" text="7 days % change:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="6" col="5" colSpan="2" text="{{ quotes.USD.percent_change_7d | floatRounding(2)  }}" color="{{ quotes.USD.percent_change_7d | getTextColor() }}"  style="font-weight: bold; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="7" colSpan="5" col="0" text="circulating supply:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="7" col="5" colSpan="4" text="{{ circulating_supply | formatThousands()}}" style="font-weight: bold; margin-bottom: 20px; color: white" textWrap="true" class="list-group-item-text" />
-                        <Label row="8" colSpan="5" col="0" text="total supply:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="8" col="5" colSpan="4"  text="{{ total_supply | formatThousands()}}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />
-                        <Label row="9" colSpan="5" col="0" text="max supply:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="9" col="5" colSpan="4" text="{{ max_supply | formatThousands()  }}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />   
-                        <Label row="10" colSpan="5" col="0" text="last updated:" style="font-size: 14; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="10" col="5" colSpan="4" text="{{ last_updated | formatDate('YYYY-MM-DD HH:mm')  }}" style="font-size: 14; font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />  
+                        <Label row="1" col="4" colSpan="4" text="{{ name }}" style="font-size: 20; color: white; margin-bottom: 20px;"   class="list-group-item-text" />
+                        <Label row="2"  rowSpan="2" col="0" text="$" style="font-weight: bold; font-size: 20; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="2" rowSpan="2" colSpan="4" col="1" text="{{ quotes.USD.price | floatRounding(4) }}" style="font-size: 22; font-weight: bold; color: #2B74F6; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="2"  rowSpan="2" col="5" text="€" style="font-weight: bold; font-size: 20; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="2" rowSpan="2" colSpan="4" col="6" text="{{ quotes.EUR.price | floatRounding(4) }}" style="font-size: 22; font-weight: bold; color: #2B74F6; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="4" colSpan="4" col="0" text="1 hour % change:" style="font-size: 18; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="4" col="5" colSpan="2" text="{{ quotes.USD.percent_change_1h  | floatRounding(2) }}" color="{{ quotes.USD.percent_change_1h | getTextColor() }}"  class="list-group-item-text" style="font-weight: bold; margin-bottom: 20px;" />
+                        <Label row="5" colSpan="4" col="0" text="1 day % change:" style="font-size: 18; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="5" col="5" colSpan="2" text="{{ quotes.USD.percent_change_24h | floatRounding(2)  }}" color="{{ quotes.USD.percent_change_24h | getTextColor() }}"  class="list-group-item-text"  style="font-weight: bold; margin-bottom: 20px;"/>
+                        <Label row="6" colSpan="4" col="0" text="7 days % change:" style="font-size: 18; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="6" col="5" colSpan="2" text="{{ quotes.USD.percent_change_7d | floatRounding(2)  }}" color="{{ quotes.USD.percent_change_7d | getTextColor() }}"  style="font-weight: bold; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="7" colSpan="5" col="0" text="circulating supply:" style="font-size: 18; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="7" col="5" colSpan="4" text="{{ circulating_supply | formatThousands()}}" style="font-weight: bold; margin-bottom: 20px; color: white"  class="list-group-item-text" />
+                        <Label row="8" colSpan="5" col="0" text="total supply:" style="font-size: 18; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="8" col="5" colSpan="4"  text="{{ total_supply | formatThousands()}}" style="font-weight: bold; margin-bottom: 20px; color: white;"  class="list-group-item-text" />
+                        <Label row="9" colSpan="5" col="0" text="max supply:" style="font-size: 18; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="9" col="5" colSpan="4" text="{{ max_supply | formatThousands()  }}" style="font-weight: bold; margin-bottom: 20px; color: white;"  class="list-group-item-text" />   
+                        <Label row="10" colSpan="5" col="0" text="last updated:" style="font-size: 14; color: white; margin-bottom: 20px;"  class="list-group-item-text" />
+                        <Label row="10" col="5" colSpan="4" text="{{ last_updated | formatDate('YYYY-MM-DD HH:mm')  }}" style="font-size: 14; font-weight: bold; margin-bottom: 20px; color: white;"  class="list-group-item-text" />  
                         
                     </GridLayout>
                 </ListView.itemTemplate>

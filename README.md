@@ -1,20 +1,51 @@
 # NS COIN TRACK
 
-## Description of the app
+## APP
+
+### GENERAL APP DESCRIPTION
 
 An app to track the prices of the latest prices of cryptocurrencies. The application is centered around a TabView with two tabs:
 
 - "Full Coins List": containing the full list of coins as fetched from the coinmarket api.
 - "Favorite Coins List": containing specially selected coins in which the user is more interested in
 
-## Functionalities
+### FUNCTIONALITIES
+
+The user can:
 
 - Browse through the list of coins available from the coin market api
-- Check latest:
+- Check on the full coins list tab the latest:
   - price in USD
   - % change over the last day
-- Can add a coin to the list of favorite coins. The list of favorite coins is serialized and the user can have to access over time
-- Can search for a specific coin in the full coin list. The app searches according to the name field.
+- Can add a coin to the list of favorite coins. The list of favorite coins is serialized and the user can have access to it over time in the favorite coins list
+- Can search for a specific coin in the full coins list according to the name of the cryptocurrency.
+
+### Tests
+
+The app was tested only simulators (no trials have been made on real machines) and is more production ready for iOS.
+
+### How to run the app
+
+- Clone the repository `https://github.com/ivivanov18/NS-COIN-TRACK`
+-
+
+### SCREENSHOTS
+
+#### iOS
+
+- Full Coins List
+  ![alt text](screenshots/iOS/iOS_Fulls_Coins_List.png "Full Coins List")
+
+- Favorite Coins List
+  ![alt text](screenshots/iOS/iOS_Favorite_Coins_List.png "Favorite Coins List")
+
+#### Android
+
+- Full Coins List
+  ![alt text](screenshots/Android/Android_Fulls_Coins_List.png "Full Coins List")
+
+- Favorite Coins List
+  ![alt text](screenshots/Android/Android_Favorite_Coins_List.png "Favorite Coins List")
 
 ## ISSUES NOT SOLVED
 
@@ -24,6 +55,7 @@ An app to track the prices of the latest prices of cryptocurrencies. The applica
   - Android: on the coins list, when I click on the star to make a coin favorite, the RadListView does not update to show the correct image (that the coin item has become a favorite). I need to scroll the list view downwards or upwards, and therefore make the element I clicked on disappear from the screen, in order the RadListView to update to the correct state (image showing the favorite picture). On the other side, the favorite list gets updated correctly to reflect the adding of the clicked coin to the favorite list.
 - RadListView does not updated on the Favorite Coins List Tab:
   - iOS: when a coin is clicked, the RadListView on the Favorite Coins List Tab, does not update. One need to scroll up and down to get it updated and it does always work.
+- RadListView: a problem also occurs with the update of the RadListView to reflect the new state of coin (added to favorite) when pullToRefresh="true" was added
 
 ## LESSONS LEARNT
 
@@ -38,8 +70,7 @@ An app to track the prices of the latest prices of cryptocurrencies. The applica
 
 However, a GridLayout works just fine.
 
-- How to pipe in Nativescript for a ListView --> used appModule.getResources() to pass the function
--
+- How to pipe in Nativescript for a ListView --> used appModule.getResources() to pass the function and use it in the xml
 
 ## TODO
 

@@ -31,8 +31,7 @@ const createViewModel = () => {
   /**
    * Gets the data from API
    * From promise gets response data and:
-   * adds lastUpdated property
-   * add isFavorite property depending on whether coin is in application settings
+   * adds isFavorite property depending on whether coin is in application settings
    * pushes to favoriteCoinsList
    * pushes to coinsList and savedCoinsList
    */
@@ -63,7 +62,7 @@ const createViewModel = () => {
   /**
    * Function called when the user taps the star image.
    * It adds coin list to favorite list and adds key in applications settings.
-   * If already favorite, then if tapped, takes out of favorite list and deletes according key from
+   * If already favorite, it takes out of favorite list and deletes the according key from
    * application settings
    * @param {object} args
    */
@@ -127,6 +126,30 @@ const createViewModel = () => {
     searchBar.hint = "Search for a cryptocurrency";
 
     viewModel.set("coinsList", new ObservableArray(savedCoinsList));
+  };
+
+  viewModel.onPullToRefreshInitiated = function(args) {
+    getDataFromAPI(apiURL).then(
+      response => {
+        const coinsDataFromAPI = Object.values(response.data);
+
+        for (coin of coinsDataFromAPI) {
+          if (applicationSettings.hasKey(coin.symbol)) {
+            coin.isFavorite = true;
+            viewModel.favoriteCoinsList.push(coin);
+          } else {
+            coin.isFavorite = false;
+          }
+          viewModel.coinsList.push(coin);
+          savedCoinsList.push(coin);
+        }
+        const listView = args.object;
+        listView.notifyPullToRefreshFinished();
+      },
+      error => {
+        console.log(error);
+      }
+    );
   };
 
   //Setting resources to formatting functions
