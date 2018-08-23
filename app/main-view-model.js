@@ -2,80 +2,22 @@
 const ObservableArray = require("data/observable-array").ObservableArray;
 const Observable = require("data/observable").Observable;
 const applicationSettings = require("application-settings");
-const httpModule = require("http");
 const appModule = require("application");
 
-//Other libraries
-const format = require("format-number");
-
-//Project import
+//Project files
 const apiURL = require("./utils/Constants").apiURL;
+const {
+  formatNumber,
+  floatPrecisionConverter,
+  getColor,
+  findIndexOfElement,
+  getDataFromAPI
+} = require("./utils/Helpers");
 
 /**
- * Function that fetches the data from the provided URL's API.
- * Makes use of the getJSON method provided by Nativescript's http module
- * @param {String} apiURL
- * @return {Promise}
- */
-const getDataFromAPI = apiURL => {
-  return httpModule.getJSON(apiURL);
-};
-
-/**
- * Used in development mode to generate the keys in applications settings
- */
-const setApplicationSettings = () => {
-  applicationSettings.setString("BTC", "BTC");
-  applicationSettings.setString("XRP", "XRP");
-  applicationSettings.setString("DOGE", "DOGE");
-};
-
-/**
- * Custom findIndexOfElement function to retrieve the index of one element in the provided array
- * of objects
- * @param {ObservableArray} coinsArray
- * @param {string} symbol
- */
-const findIndexOfElement = (coinsArray, symbol) => {
-  let indexOfElementToUpdate = -1;
-
-  coinsArray.forEach((element, index) => {
-    if (element.symbol === symbol) {
-      indexOfElementToUpdate = index;
-      return;
-    }
-  });
-
-  return indexOfElementToUpdate;
-};
-
-/**
- * Helper function used to round the displayed value of the price label with 4 numbers after the coma
- * @param {string} valueToRound
- * @param {number} roundingPrecision the number of integers after the coma
- * @return {number}
- */
-const floatPrecisionConverter = (valueToRound, roundingPrecision) => {
-  return parseFloat(valueToRound).toFixed(roundingPrecision);
-};
-
-/**
- * Helper function used to style the color depending on the value of the text attribute
- * If the text attribute contains `-` --> it 's a decrease then "red"
- * If the text attribute does not `-` --> it 's a increase then "blue"
- * @param {string} value
- * @return {string} "red" or "green" to set the value of the color property accordingly
- */
-const getColor = value => {
-  const valueRegExp = new RegExp("-");
-  return valueRegExp.test(value) ? "red" : "green";
-};
-
-const formatNumber = value => {
-  return format({ integerSeparator: " " })(value);
-};
-/**
- *
+ * Main function that creates the model
+ * Gets the data, populates the 3 arrays that are used
+ * Defines the different functions attached to events from the UI (onTap, onClear, onSubmit)
  * @return {ViewModel}
  */
 const createViewModel = () => {
@@ -187,7 +129,7 @@ const createViewModel = () => {
     viewModel.set("coinsList", new ObservableArray(savedCoinsList));
   };
 
-  //Setting float precision rounder
+  //Setting resources to formatting functions
   appModule.getResources().floatRounding = floatPrecisionConverter;
   appModule.getResources().getTextColor = getColor;
   appModule.getResources().formatThousands = formatNumber;
