@@ -58,11 +58,11 @@
                         <Label row="6" colSpan="4" col="0" text="7 days % change:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
                         <Label row="6" col="5" colSpan="2" text="{{ quotes.USD.percent_change_7d | floatRounding(2)  }}" color="{{ quotes.USD.percent_change_7d | getTextColor() }}"  style="font-weight: bold; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
                         <Label row="7" colSpan="5" col="0" text="circulating supply:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="7" col="5" colSpan="4" text="{{ circulating_supply}}" style="font-weight: bold; margin-bottom: 20px; color: white" textWrap="true" class="list-group-item-text" />
+                        <Label row="7" col="5" colSpan="4" text="{{ circulating_supply | formatThousands()}}" style="font-weight: bold; margin-bottom: 20px; color: white" textWrap="true" class="list-group-item-text" />
                         <Label row="8" colSpan="5" col="0" text="total supply:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="8" col="5" colSpan="4"  text="{{ total_supply}}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />
+                        <Label row="8" col="5" colSpan="4"  text="{{ total_supply | formatThousands()}}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />
                         <Label row="9" colSpan="5" col="0" text="max supply:" style="font-size: 18; color: white; margin-bottom: 20px;" textWrap="true" class="list-group-item-text" />
-                        <Label row="9" col="5" colSpan="4" text="{{ max_supply  }}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />   
+                        <Label row="9" col="5" colSpan="4" text="{{ max_supply | formatThousands()  }}" style="font-weight: bold; margin-bottom: 20px; color: white;" textWrap="true" class="list-group-item-text" />   
                     </GridLayout>
                 </ListView.itemTemplate>
             </ListView>

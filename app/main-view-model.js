@@ -6,7 +6,7 @@ const httpModule = require("http");
 const appModule = require("application");
 
 //Other libraries
-//const format = require("format-number");
+const format = require("format-number");
 
 //Project import
 const apiURL = require("./utils/Constants").apiURL;
@@ -71,9 +71,9 @@ const getColor = value => {
   return valueRegExp.test(value) ? "red" : "green";
 };
 
-// const formatNumber = value => {
-//   return format({ integerSeparator: " " })(value);
-// };
+const formatNumber = value => {
+  return format({ integerSeparator: " " })(value);
+};
 /**
  *
  * @return {ViewModel}
@@ -188,7 +188,7 @@ const createViewModel = () => {
   //Setting float precision rounder
   appModule.getResources().floatRounding = floatPrecisionConverter;
   appModule.getResources().getTextColor = getColor;
-  // appModule.getResources().formatThousands = formatNumber;
+  appModule.getResources().formatThousands = formatNumber;
 
   return viewModel;
 };

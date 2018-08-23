@@ -10,6 +10,7 @@
     }
   },
   "dependencies": {
+    "format-number": "^3.0.0",
     "nativescript-theme-core": "~1.0.4",
     "nativescript-ui-listview": "^3.5.10",
     "tns-core-modules": "~4.1.0"
