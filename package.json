@@ -5,9 +5,6 @@
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.nscointrack",
-    "tns-android": {
-      "version": "4.2.0"
-    },
     "tns-ios": {
       "version": "4.2.0"
     }

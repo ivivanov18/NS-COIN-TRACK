@@ -5,6 +5,9 @@ function onNavigatingTo(args) {
   page.bindingContext = createViewModel();
 }
 
+function onItemLoading(args) {
+  console.log("------ ON ITEM LOADING -------:", args.object);
+}
 /*
 Exporting a function in a NativeScript code-behind file makes it accessible
 to the file’s corresponding XML file. In this case, exporting the onNavigatingTo
@@ -12,3 +15,4 @@ function here makes the navigatingTo="onNavigatingTo" binding in this page’s X
 file work.
 */
 exports.onNavigatingTo = onNavigatingTo;
+exports.onItemLoading = onItemLoading;

@@ -1,13 +1,19 @@
+//Nativescript modules
 const ObservableArray = require("data/observable-array").ObservableArray;
 const Observable = require("data/observable").Observable;
 const applicationSettings = require("application-settings");
 const httpModule = require("http");
 const appModule = require("application");
 
+//Other libraries
+//const format = require("format-number");
+
+//Project import
 const apiURL = require("./utils/Constants").apiURL;
 
 /**
- * Function that fetch the data from the provided URL's API
+ * Function that fetches the data from the provided URL's API.
+ * Makes use of the getJSON method provided by Nativescript's http module
  * @param {String} apiURL
  * @return {Promise}
  */
@@ -43,23 +49,55 @@ const findIndexOfElement = (coinsArray, symbol) => {
   return indexOfElementToUpdate;
 };
 
-const floatPrecisionConverter = value => {
-  return parseFloat(value).toFixed(4);
+/**
+ * Helper function used to round the displayed value of the price label with 4 numbers after the coma
+ * @param {string} valueToRound
+ * @param {number} roundingPrecision the number of integers after the coma
+ * @return {number}
+ */
+const floatPrecisionConverter = (valueToRound, roundingPrecision) => {
+  return parseFloat(valueToRound).toFixed(roundingPrecision);
 };
+
+/**
+ * Helper function used to style the color depending on the value of the text attribute
+ * If the text attribute contains `-` --> it 's a decrease then "red"
+ * If the text attribute does not `-` --> it 's a increase then "blue"
+ * @param {string} value
+ * @return {string} "red" or "green" to set the value of the color property accordingly
+ */
+const getColor = value => {
+  const valueRegExp = new RegExp("-");
+  return valueRegExp.test(value) ? "red" : "green";
+};
+
+// const formatNumber = value => {
+//   return format({ integerSeparator: " " })(value);
+// };
 /**
  *
  * @return {ViewModel}
  */
 const createViewModel = () => {
   let viewModel = new Observable();
-  //let coinsDataFromAPI = [];
+
+  // Used when search option is used to save the full coins list
   let savedCoinsList = [];
 
+  /**
+   * Gets the data from API
+   * From promise gets response data and:
+   * adds lastUpdated property
+   * add isFavorite property depending on whether coin is in application settings
+   * pushes to favoriteCoinsList
+   * pushes to coinsList and savedCoinsList
+   */
   getDataFromAPI(apiURL).then(
     response => {
       const coinsDataFromAPI = Object.values(response.data);
 
       for (coin of coinsDataFromAPI) {
+        coin.lastUpdated = Date.now();
         if (applicationSettings.hasKey(coin.symbol)) {
           coin.isFavorite = true;
           viewModel.favoriteCoinsList.push(coin);
@@ -78,12 +116,11 @@ const createViewModel = () => {
   viewModel.coinsList = new ObservableArray();
   viewModel.favoriteCoinsList = new ObservableArray();
 
-  // setApplicationSettings();
-
   /**
    * Function called when the user taps the star image.
-   * It adds coin list to favorite list and add in applications settings.
-   * If already favorite, then if tapped, takes out of favorite and deletes according key from
+   * It adds coin list to favorite list and adds key in applications settings.
+   * If already favorite, then if tapped, takes out of favorite list and deletes according key from
+   * application settings
    * @param {object} args
    */
   viewModel.onTapStar = function(args) {
@@ -111,6 +148,10 @@ const createViewModel = () => {
     }
   };
 
+  /**
+   * Function called when user searches for specific coin in search bar and hits enter
+   * @param {object} args
+   */
   viewModel.onSubmit = function(args) {
     const searchBar = args.object;
     const searchValue = searchBar.text.toLowerCase();
@@ -132,6 +173,10 @@ const createViewModel = () => {
     }
   };
 
+  /**
+   * Function called when user clears the search bar by clicking on the x
+   * @param {object} args
+   */
   viewModel.onClear = function(args) {
     const searchBar = args.object;
     searchBar.text = "";
@@ -142,6 +187,8 @@ const createViewModel = () => {
 
   //Setting float precision rounder
   appModule.getResources().floatRounding = floatPrecisionConverter;
+  appModule.getResources().getTextColor = getColor;
+  // appModule.getResources().formatThousands = formatNumber;
 
   return viewModel;
 };
