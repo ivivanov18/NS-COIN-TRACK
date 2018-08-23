@@ -80,6 +80,7 @@ const formatNumber = value => {
  */
 const createViewModel = () => {
   let viewModel = new Observable();
+  viewModel.set("isLoading", true);
 
   // Used when search option is used to save the full coins list
   let savedCoinsList = [];
@@ -107,6 +108,7 @@ const createViewModel = () => {
         viewModel.coinsList.push(coin);
         savedCoinsList.push(coin);
       }
+      viewModel.set("isLoading", false);
     },
     error => {
       console.log(error);

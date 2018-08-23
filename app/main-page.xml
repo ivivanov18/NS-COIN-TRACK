@@ -28,6 +28,7 @@
                         </GridLayout>
                     </lv:RadListView.itemTemplate>
                 </lv:RadListView>
+                <ActivityIndicator rowSpan="2" busy="{{isLoading}}" width="200" height="200" visibility="{{isLoading ? 'visible' : 'collapse'}}" color="#2B74F6"></ActivityIndicator>
             </GridLayout>
         </TabViewItem>
         <TabViewItem title="Favorite Coins List" iconSource= '~/assets/images/favorite20px.png'>
