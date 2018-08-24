@@ -129,27 +129,29 @@ const createViewModel = () => {
   };
 
   viewModel.onPullToRefreshInitiated = function(args) {
-    getDataFromAPI(apiURL).then(
-      response => {
-        const coinsDataFromAPI = Object.values(response.data);
+    setTimeout(function() {
+      getDataFromAPI(apiURL).then(
+        response => {
+          const coinsDataFromAPI = Object.values(response.data);
 
-        for (coin of coinsDataFromAPI) {
-          if (applicationSettings.hasKey(coin.symbol)) {
-            coin.isFavorite = true;
-            viewModel.favoriteCoinsList.push(coin);
-          } else {
-            coin.isFavorite = false;
+          for (coin of coinsDataFromAPI) {
+            if (applicationSettings.hasKey(coin.symbol)) {
+              coin.isFavorite = true;
+              viewModel.favoriteCoinsList.push(coin);
+            } else {
+              coin.isFavorite = false;
+            }
+            viewModel.coinsList.push(coin);
+            savedCoinsList.push(coin);
           }
-          viewModel.coinsList.push(coin);
-          savedCoinsList.push(coin);
+          const listView = args.object;
+          listView.notifyPullToRefreshFinished();
+        },
+        error => {
+          console.log(error);
         }
-        const listView = args.object;
-        listView.notifyPullToRefreshFinished();
-      },
-      error => {
-        console.log(error);
-      }
-    );
+      );
+    }, 1000);
   };
 
   //Setting resources to formatting functions
