@@ -50,12 +50,8 @@ The app was tested only simulators (no trials have been made on real machines).
 ## ISSUES NOT SOLVED YET
 
 - `CONSOLE ERROR file:///app/tns_modules/tns-core-modules/trace/trace.js:165:30: Binding: Property: 'onTapStar' is invalid or does not exist. SourceProperty: 'onTapStar'`: this creates some performance problems because this error is being constantly logged on the console.
-- RadListView does not get updated on the Full Coin List tab:
-  - iOS: when SearchBar is used to filter the results and when I click on one of the filtered results --> the element on which I clicked does not update the image to show it has become a favorite, YET the favorite coins list gets corrected updated. When I clear the searchbar and go back to the full list of coins, ONLY THEN the according item display the right image that shows the element is favorite.
-  - Android: on the coins list, when I click on the star to make a coin favorite, the RadListView does not update to show the correct image (that the coin item has become a favorite). I need to scroll the list view downwards or upwards, and therefore make the element I clicked on disappear from the screen, in order the RadListView to update to the correct state (image showing the favorite picture). On the other side, the favorite list gets updated correctly to reflect the adding of the clicked coin to the favorite list.
 - RadListView does not updated on the Favorite Coins List Tab:
-  - iOS: when a coin is clicked, the RadListView on the Favorite Coins List Tab, does not update. One need to scroll up and down to get it updated and it does always work.
-- RadListView: a problem also occurs with the update of the RadListView to reflect the new state of coin (added to favorite) when pullToRefresh="true" was added
+  - iOS: when a coin is clicked, the RadListView on the Favorite Coins List Tab, does not update. One need to scroll up and down to get it updated and it does always work. --> ** This solution is not used anyway. Instead a normal list view was used. **
 - Performance issue on iOS: the data is loaded much faster on Android than on iOS. Same for pull to refresh action --> the data updates for several seconds where on Android it seems instantaneuous.
 
 ## LESSONS LEARNT
@@ -72,6 +68,8 @@ The app was tested only simulators (no trials have been made on real machines).
 However, a GridLayout works just fine.
 
 - How to pipe in Nativescript for a ListView --> used appModule.getResources() to pass the function and use it in the xml
+
+- SOLVED: _RadListView: a problem also occurs with the update of the RadListView to reflect the new state of coin (added to favorite) when pullToRefresh="true" was added_. As advised on the following post https://github.com/telerik/nativescript-ui-feedback/issues/278 --> setTimeout helped also here.
 
 ## TODO
 

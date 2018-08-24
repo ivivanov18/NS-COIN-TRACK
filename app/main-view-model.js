@@ -3,6 +3,7 @@ const ObservableArray = require("data/observable-array").ObservableArray;
 const Observable = require("data/observable").Observable;
 const applicationSettings = require("application-settings");
 const appModule = require("application");
+const platformModule = require("tns-core-modules/platform");
 
 //Project files
 const apiURL = require("./utils/Constants").apiURL;
@@ -89,6 +90,11 @@ const createViewModel = () => {
       //Persist Application Settings
       applicationSettings.setString(symbol, symbol);
     }
+
+    // on iOS the refresh() called on the parent of parent... crashes the app
+    if (platformModule.isAndroid) {
+      args.object.parent.parent.parent.refresh();
+    }
   };
 
   /**
@@ -128,6 +134,10 @@ const createViewModel = () => {
     viewModel.set("coinsList", new ObservableArray(savedCoinsList));
   };
 
+  /**
+   * Function the list on the Full Coins List Tab is pulled downwards
+   * @param {object} args
+   */
   viewModel.onPullToRefreshInitiated = function(args) {
     setTimeout(function() {
       getDataFromAPI(apiURL).then(
