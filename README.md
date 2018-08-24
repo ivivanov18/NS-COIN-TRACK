@@ -52,6 +52,7 @@ The app was tested only simulators (no trials have been made on real machines).
 - `CONSOLE ERROR file:///app/tns_modules/tns-core-modules/trace/trace.js:165:30: Binding: Property: 'onTapStar' is invalid or does not exist. SourceProperty: 'onTapStar'`: this creates some performance problems because this error is being constantly logged on the console.
 - RadListView does not updated on the Favorite Coins List Tab:
   - iOS: when a coin is clicked, the RadListView on the Favorite Coins List Tab, does not update. One need to scroll up and down to get it updated and it does always work. --> ** This solution is not used anyway. Instead a normal list view was used. **
+- RadListView: a problem also occurs with the update of the RadListView to reflect the new state of coin (added to favorite) when pullToRefresh="true" was added. Before pulling, update works fine, after pulling to refresh, update does not work.
 - Performance issue on iOS: the data is loaded much faster on Android than on iOS. Same for pull to refresh action --> the data updates for several seconds where on Android it seems instantaneuous.
 
 ## LESSONS LEARNT
@@ -69,7 +70,7 @@ However, a GridLayout works just fine.
 
 - How to pipe in Nativescript for a ListView --> used appModule.getResources() to pass the function and use it in the xml
 
-- SOLVED: _RadListView: a problem also occurs with the update of the RadListView to reflect the new state of coin (added to favorite) when pullToRefresh="true" was added_. As advised on the following post https://github.com/telerik/nativescript-ui-feedback/issues/278 --> setTimeout helped also here.
+- SOLVED: As advised on the following post https://github.com/telerik/nativescript-ui-feedback/issues/278 --> setTimeout helped also here.
 
 ## TODO
 
