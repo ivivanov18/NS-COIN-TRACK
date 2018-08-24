@@ -142,6 +142,10 @@ const createViewModel = () => {
     setTimeout(function() {
       getDataFromAPI(apiURL).then(
         response => {
+          savedCoinsList = [];
+          viewModel.set("coinsList", new ObservableArray([]));
+          viewModel.set("favoriteCoinsList", new ObservableArray([]));
+
           const coinsDataFromAPI = Object.values(response.data);
 
           for (coin of coinsDataFromAPI) {
