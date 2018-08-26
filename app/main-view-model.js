@@ -43,8 +43,10 @@ const createViewModel = () => {
       for (coin of coinsDataFromAPI) {
         if (applicationSettings.hasKey(coin.symbol)) {
           coin.isFavorite = true;
+          coin.srcImage = "~/assets/images/starfav.png";
           viewModel.favoriteCoinsList.push(coin);
         } else {
+          coin.srcImage = "~/assets/images/star.png";
           coin.isFavorite = false;
         }
         viewModel.coinsList.push(coin);
@@ -69,6 +71,8 @@ const createViewModel = () => {
    */
   viewModel.onTapStar = function(args) {
     const symbol = args.object.coin;
+    //~/assets/images/star.png
+    //~/assets/images/starfav.png
 
     let indOfElementToUpdateInList = findIndexOfElement(this.coinsList, symbol);
 
@@ -79,11 +83,13 @@ const createViewModel = () => {
         symbol
       );
       modifiedItem.isFavorite = false;
+      modifiedItem.srcImage = "~/assets/images/star.png";
       this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
       this.favoriteCoinsList.splice(indOfElementToUpdateInFavList, 1);
       applicationSettings.remove(symbol);
     } else {
       modifiedItem.isFavorite = true;
+      modifiedItem.srcImage = "~/assets/images/starfav.png";
       this.coinsList.setItem(indOfElementToUpdateInList, modifiedItem);
       this.favoriteCoinsList.push(modifiedItem);
 
@@ -92,6 +98,7 @@ const createViewModel = () => {
     }
 
     // on iOS the refresh() called on the parent of parent... crashes the app
+    // better findViewBy
     if (platformModule.isAndroid) {
       args.object.parent.parent.parent.refresh();
     }
@@ -125,6 +132,7 @@ const createViewModel = () => {
   /**
    * Function called when user clears the search bar by clicking on the x
    * @param {object} args
+   * @todo refactor --> function
    */
   viewModel.onClear = function(args) {
     const searchBar = args.object;

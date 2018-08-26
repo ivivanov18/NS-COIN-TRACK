@@ -47,7 +47,7 @@ The app was tested only simulators (no trials have been made on real machines).
 
 ![Screenshot](screenshots/Android/Android_Favorite_Coins_List.png "Favorite Coins List")
 
-## ISSUES NOT SOLVED YET
+## KNOWN ISSUES
 
 - `CONSOLE ERROR file:///app/tns_modules/tns-core-modules/trace/trace.js:165:30: Binding: Property: 'onTapStar' is invalid or does not exist. SourceProperty: 'onTapStar'`: this creates some performance problems because this error is being constantly logged on the console.
 - RadListView does not updated on the Favorite Coins List Tab:
@@ -80,6 +80,7 @@ However, a GridLayout works just fine.
 - Add sorting capacities for Full Coin List to sort according to different options "price", "volume", '% change".
 - Icons management for Android
 - Refactor styling from xml inline to a separate file
+- Use nativescript-accordion on Favorite Coins List
 
 ## Assets credits
 
@@ -102,9 +103,3 @@ This part is to give credit for the FREE icons that are used in the applications
 ```
 <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 ```
-
-tns install
-Copying template files...
-Platform ios successfully added. v4.2.0
-Copying template files...
-Platform android successfully added. v4.2.0

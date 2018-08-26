@@ -19,13 +19,13 @@
                             <Label row="0" col="0" colSpan="4" text="{{ name }}"  class="list-group-item-text" style="font-size: 26; font-weight: bold"/>
                             <Label row="1" col="0"  text="{{ symbol }}"   style=" font-size: 18;"    class="list-group-item-heading" />
                             <Label row="1" rowSpan="2" col="2" text="$" style="font-weight: bold; font-size: 20;"  class="list-group-item-text" />
-                            <Label row="1" rowSpan="2" colSpan="2" col="3" text="{{ quotes.USD.price | floatRounding(4) }}" style="font-size: 22; font-weight: bold; color: #2B74F6"  class="list-group-item-text" />
-                            <Image row="0" col="4" src="~/assets/images/star.png" stretch="aspect"  coin="{{symbol}}" tap="{{onTapStar}}" 
+                            <Label row="1" rowSpan="2" colSpan="2" col="3" text="{{ quotes.USD.price | floatRounding(8) }}" style="font-size: 22; font-weight: bold; color: #2B74F6"  class="list-group-item-text" />
+                            <Image row="0" col="4" src="{{srcImage}}" stretch="aspect"  coin="{{symbol}}" tap="{{onTapStar}}" 
                             style="margin-top: 20px;"
-                            visibility="{{ !isFavorite ? 'visible' : 'collapsed' }}" />
-                            <Image row="0" col="4" src="~/assets/images/starfav.png" stretch="aspect"  coin="{{symbol}}" tap="{{onTapStar}}"
-                            visibility="{{ isFavorite ? 'visible' : 'collapsed' }}"
-                            style="margin-top: 20px;" />
+                            visibility="visible" />
+                            <!-- <Image row="0" col="4" src="~/assets/images/starfav.png" stretch="aspect"  coin="{{symbol}}" tap="{{onTapStar}}"
+                            visibility="{{ isFavorite ? 'visible' : 'collapsed' }}" 
+                            style="margin-top: 20px;" />-->
                             <Label row="3" col="0" colSpan="4" text="% change in 1 day" class="list-group-item-text" />
                             <Label row="3" col="3" text="{{ quotes.USD.percent_change_24h | floatRounding(2) }}"  color="{{ quotes.USD.percent_change_24h | getTextColor() }}" style="font-weight: bold; font-size: 18; "  class="list-group-item-text" />
                         </GridLayout>
